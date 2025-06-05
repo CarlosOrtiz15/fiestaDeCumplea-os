@@ -1,0 +1,438 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@500;700;800&family=Playfair+Display&display=swap");
+
+.prueba {
+    border: 1px solid black;
+}
+.nuevo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.txt_titulo {
+    font-family: "Nunito", sans-serif;
+    font-weight: 900;
+    color: black;
+}
+.regresar a {
+    border: 2px solid black;
+    padding: 8px;
+    margin-right: 20px;
+    background-color: white;
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+}
+.t_center {
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.video-container {
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+}
+.texto-rojo {
+    color: red;
+}
+
+.image-container {
+    height: auto;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #2cb7b3;
+    border-top-right-radius: 17px;
+    border-bottom-right-radius: 17px;
+    overflow: hidden;
+}
+.image-wrapper {
+    border-top: 1px solid #7ed0cb;
+    position: relative; /* FUNDAMENTAL para posicionar los drop-zones */
+    min-height: 400px; /* Asegura que tenga una altura mínima */
+    display: flex; /* Permite centrar la imagen base */
+    justify-content: center; /* Centra la imagen base */
+    align-items: center; /* Centra la imagen base */
+}
+
+/* Imagen de la invitación base */
+.imagenPrueba {
+    width: 60%; /* Ajusta al ancho de la imagen de la invitación */
+    height: auto;
+    display: block; /* Elimina espacios extra */
+}
+
+
+.box-container {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #7ed0cb;
+    border-top-left-radius: 17px;
+    border-bottom-left-radius: 17px;
+    border-right: 0px;
+}
+
+/* Posicionamiento de los textos fijos de la invitación */
+.inv_t1 {
+    text-align: center;
+    font-family: "Nunito", sans-serif;
+    font-weight: 900;
+    position: absolute;
+    top: 17%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 38px;
+    color: white;
+    line-height: 36px;
+    text-shadow: -2px -2px 0 black, 2px -2px 0 black, -2px 2px 0 black,
+        2px 2px 0 black;
+}
+.t1e {
+    color: #fefa9c;
+    font-size: 46px;
+}
+.inv_t2 {
+    text-align: center;
+    font-weight: bold;
+    font-family: "Nunito", sans-serif;
+    font-weight: 900;
+    font-size: 25px;
+    color: white;
+    position: absolute;
+    top: 31%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-shadow: -2px -2px 0 black, 2px -2px 0 black, -2px 2px 0 black,
+        2px 2px 0 black;
+}
+.inv_t3 {
+    text-align: center;
+    font-weight: bold;
+    font-family: "Nunito", sans-serif;
+    font-weight: 900;
+    font-size: 25px;
+    color: white;
+    position: absolute;
+    top: 47%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-shadow: -2px -2px 0 black, 2px -2px 0 black, -2px 2px 0 black,
+        2px 2px 0 black;
+}
+.inv_t4 {
+    text-align: center;
+    font-weight: bold;
+    font-family: "Nunito", sans-serif;
+    font-weight: 900;
+    font-size: 25px;
+    color: white;
+    position: absolute;
+    top: 62%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-shadow: -2px -2px 0 black, 2px -2px 0 black, -2px 2px 0 black,
+        2px 2px 0 black;
+}
+.inv_t5 {
+    text-align: center;
+    font-weight: bold;
+    font-family: "Nunito", sans-serif;
+    font-weight: 900;
+    font-size: 25px;
+    color: white;
+    position: absolute;
+    top: 91%;
+    left: 33%;
+    transform: translateX(-65%);
+    text-shadow: -2px -2px 0 black, 2px -2px 0 black, -2px 2px 0 black,
+        2px 2px 0 black;
+}
+.inv_t6 {
+    text-align: center;
+    font-weight: bold;
+    font-family: "Nunito", sans-serif;
+    font-weight: 900;
+    font-size: 25px;
+    line-height: 31px;
+    color: #fefa9c;
+    position: absolute;
+    top: 78%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-shadow: -2px -2px 0 black, 2px -2px 0 black, -2px 2px 0 black,
+        2px 2px 0 black;
+}
+.t6e {
+    color: #fefa9c;
+    font-size: 30px;
+}
+
+.inv_t7 {
+    text-align: center;
+    font-weight: bold;
+    font-family: "Nunito", sans-serif;
+    font-weight: 900;
+    font-size: 25px;
+    color: white;
+    position: absolute;
+    top: 7%;
+    left: 32%;
+    transform: translateX(-65%);
+    text-shadow: -2px -2px 0 black, 2px -2px 0 black, -2px 2px 0 black,
+        2px 2px 0 black;
+}
+
+
+.timer-container {
+    font-family: "Nunito", sans-serif;
+    font-weight: 900;
+    font-size: 15pt;
+    color: #2cb7b3;
+}
+.aciertosErrores {
+    font-family: "Nunito", sans-serif;
+    font-weight: 900;
+    border-top: 1px solid #2cb7b3;
+}
+.acierto-contairner {
+    border-right: 1px solid #2cb7b3;
+}
+.opciones-container-deskopt {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+.opciones-container-movil {
+    display: none; /* Por defecto oculto en desktop */
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.box {
+    position: relative; /* Necesario para la imagen interna si se posiciona */
+    display: flex; /* Para alinear contenido y imagen */
+    align-items: center;
+    padding: 7px;
+    gap: 10px;
+    font-family: "Nunito", sans-serif;
+    font-weight: 700;
+    font-size: 15pt;
+    cursor: grab; /* Cambiado de 'pointer' a 'grab' para indicar arrastrable */
+    color: white;
+    background-color: #2cb7b3;
+    border: 2px solid black;
+    border-radius: 60px;
+    max-width: 100%;
+    max-height: 100%;
+    user-select: none;
+    transition: opacity 0.3s ease; /* Transición para cuando se oculta */
+}
+.box.initial {
+    background-color: #2cb7b3;
+}
+.box.selected {
+    background-color: #249490;
+    border-color: black;
+}
+.box.dropped {
+    /* Los elementos "dropped" ahora se ocultarán, no cambiarán de estilo */
+    display: none;
+}
+/* Las clases 'incorrect' y 'correct' en el box arrastrable ya no son relevantes directamente */
+
+
+/* Nuevo: Contenedor para los drop-spaces sobre la imagen de la invitación */
+#overlay-spaces-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Permitir clicks a través si no hay un elemento arrastrado por encima.
+       Se debe manejar con JS en el onDrop para evitar que un click en un drop-space vacío dispare el clear si hay un elemento arrastrado sobre él.
+       Para este juego, es mejor que cada drop-space maneje su propio pointer-events.
+    */
+}
+
+.drop-zone {
+    border-radius: 60px;
+    cursor: default;
+    position: absolute; /* Esencial para posicionar sobre la imagen */
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    justify-content: center;
+    text-align: center;
+    padding: 6px;
+    font-family: "Nunito", sans-serif;
+    font-weight: 700;
+    font-size: 16pt;
+    border: 2px dotted black;
+    max-width: 100%;
+    max-height: 100%;
+    background-color: rgba(255, 255, 255, 0.4); /* Semitransparente para ver la invitación de fondo */
+    transition: background-color 0.3s, border-color 0.3s;
+}
+.drop-zone.initial {
+    background-color: rgba(255, 255, 255, 0.4); /* Mismo que el predeterminado */
+    color: black;
+}
+.drop-zone.has-content {
+    background-color: #2cb7b3;
+    color: white;
+    border: 3px solid black;
+    cursor: pointer; /* Para poder hacer clic y quitar la imagen */
+}
+.drop-zone.correct {
+    border: 3px solid green; /* Borde verde para correcto */
+    background-color: rgba(144, 238, 144, 0.5); /* Verde claro semitransparente */
+}
+.drop-zone.incorrect {
+    border: 3px solid red;
+    background-color: rgba(255, 99, 71, 0.5); /* Rojo claro semitransparente */
+}
+.drop-zone.hover {
+    background-color: lightblue;
+    border: 2px dashed blue;
+}
+
+.btn-verificar {
+    text-align: center;
+    border: 1px solid #2cb7b3;
+    background-color: #efefef;
+    height: 2.7em;
+    border-radius: 90px;
+    padding: 6px;
+    font-family: "Nunito", sans-serif;
+    font-weight: 700;
+    color: black;
+    cursor: pointer;
+}
+.btn-reintentar {
+    text-align: center;
+    border: 1px solid red;
+    background-color: #efefef;
+    height: 2.7em;
+    border-radius: 90px;
+    padding: 6px;
+    font-family: "Nunito", sans-serif;
+    font-weight: 700;
+    color: black;
+    cursor: pointer;
+}
+.btn-terminar {
+    text-align: center;
+    border: 1px solid green;
+    background-color: #efefef;
+    height: 2.7em;
+    border-radius: 90px;
+    padding: 6px;
+    font-family: "Nunito", sans-serif;
+    font-weight: 700;
+    color: black;
+    cursor: pointer;
+}
+.imgBox {
+    border-radius: 15px;
+    width: 40px;
+    height: 40px;
+}
+
+.drop-zone img.imgDropZone {
+    max-width: 90%; /* Ajusta al 90% del ancho del drop-zone */
+    max-height: 90%; /* Ajusta al 90% de la altura del drop-zone */
+    object-fit: contain; /* Asegura que la imagen se ajuste sin distorsión */
+    display: block; /* Para que max-width/height funcionen correctamente */
+    border-radius: 15px;
+}
+
+@media (max-width: 576px) {
+    .opciones-container-deskopt {
+        display: none;
+    }
+    .opciones-container-movil {
+        display: flex; /* Muestra en móvil */
+        border-top: 1px solid #2cb7b3;
+    }
+    .imgBox {
+        width: 30px;
+        height: 30px;
+    }
+
+    .drop-zone img.imgDropZone {
+        width: 27px;
+        margin-left: 10px;
+        height: 27px;
+        border-radius: 15px;
+    }
+    .inv_t1 {
+        top: 16%;
+        width: 90%;
+        font-size: 22px;
+        line-height: 21px;
+    }
+    .t1e {
+        color: #fefa9c;
+        font-size: 30px;
+    }
+    .drop-zone {
+        width: 55% !important; /* Mantenemos !important del original */
+        font-size: 10pt;
+    }
+    .inv_t2 {
+        font-size: 21px;
+        top: 28%;
+    }
+    .inv_t3 {
+        font-size: 21px;
+        top: 45%;
+    }
+    .inv_t4 {
+        font-size: 21px;
+        width: 90%;
+        top: 61%;
+    }
+    .inv_t5 {
+        font-size: 21px;
+        top: 90%;
+        left: 30%;
+    }
+    .t6e {
+        color: #fefa9c;
+        font-size: 22px;
+    }
+    .inv_t6 {
+        font-size: 21px;
+        top: 78%;
+        line-height: 21px;
+    }
+    .inv_t7 {
+        font-size: 19px;
+        top: 6.5%;
+        left: 29%;
+    }
+
+    .timer-container {
+        font-family: "Nunito", sans-serif;
+        font-weight: 900;
+        font-size: 12pt;
+        color: #2cb7b3;
+    }
+    .box {
+        width: auto;
+        height: auto;
+    }
+    .box-container {
+        border: 0px;
+    }
+    .image-container {
+        border-radius: 17px;
+    }
+    .image-wrapper img {
+        width: 100%;
+        height: auto;
+    }
+}

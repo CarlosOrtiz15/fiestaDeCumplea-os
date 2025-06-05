@@ -1,0 +1,2698 @@
+/* Escritorio */
+* {
+  box-sizing: border-box;
+}
+body {
+  height: 100vh;
+  font-family: "Mulish";
+  font-weight: normal;
+}
+input {
+  font-family: "Mulish";
+  font-weight: normal;
+}
+iframe {
+  max-width: 100%;
+}
+#resultadoSec6 {
+  display: none;
+}
+#menuBtn{
+  background-image: url('imgs/casa.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding-top: 5px;
+  width: 56px;
+  height: 56px;
+}
+.aciertosErrores {
+  align-items: center;
+  height: 80px;
+  width: fit-content;
+}
+.imagenTarjetas {
+  width: 500px;
+  height: 380px;
+  margin: 20px;
+}
+
+/* Aqui va de relacionar columnas */
+/* Asegura que el lienzo se superponga a los elementos */
+#gameCanvas {
+  /* position: absolute;
+  top: 0;
+  left: 0; */
+  width: 100%;
+  height: 100%;
+}
+
+/* Para destacar elementos seleccionados */
+.selected {
+  outline: 2px solid blue;
+}
+
+/* Estilo para elementos bloqueados */
+.inalterable {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+/* Canvas para las líneas de conexión */
+canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* Para que el canvas no interfiera con los clics en otros elementos */
+}
+@media (min-width: 1024px) {
+  .imgExpose {
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    gap: 20px; /* Espacio entre las imágenes */
+  }
+  .imgExpose img {
+    display: block;
+    /* Ajusta el tamaño según sea necesario */
+    width: 450px;
+    height: auto;
+  }
+
+  .relacionar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 600px;
+    position: relative;
+  }
+
+  /* Columnas izquierda y derecha */
+  .columnaRelacion {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    /*z-index: 2; /* Asegura que estén sobre el canvas */
+  }
+
+  /* Estilos para los textos de la columna izquierda */
+  .columnaRelacion span {
+    padding: 10px;
+    border: 1px solid #000;
+    border-radius: 5px;
+    background-color: #fff;
+    cursor: pointer;
+    text-align: center;
+  }
+
+  /* Estilos para las imágenes de la columna derecha */
+  .columnaRelacion img {
+    width: 100px;
+    height: auto;
+    border: 1px solid #000;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #fff;
+  }
+
+  /* Estilos para elementos seleccionados */
+  .selected {
+    outline: 2px solid blue;
+  }
+
+  /* Estilos para elementos bloqueados */
+  .locked {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+  .rosa {
+    background-color: pink;
+    text-decoration: none;
+  }
+  .amarilla {
+    background-color: yellow;
+    text-decoration: none;
+  }
+  .verde {
+    background-color: lightgreen;
+    text-decoration: none;
+  }
+  .azul {
+    background-color: lightblue;
+    text-decoration: none;
+  }
+  .ElenaEncuentro {
+    background-image: url("./imgs/ejercicio/ElenaEncuentro.png");
+    position: static;
+    white-space: nowrap;
+    background-repeat: no-repeat;
+    background-size: contain;
+    padding-bottom: 400px;
+    width: 600px;
+    height: 840px;
+  }
+  .JavierEncuentro {
+    background-image: url("./imgs/ejercicio/JavierEncuentro.png");
+    position: static;
+    white-space: nowrap;
+    background-repeat: no-repeat;
+    background-size: contain;
+    padding-bottom: 400px;
+    width: 600px;
+    height: 840px;
+  }
+  .nuevasFormasImg {
+    background-image: url("./imgs/ejercicio/casaRosaReal.png");
+    position: static;
+    white-space: nowrap;
+    background-repeat: no-repeat;
+    background-size: contain;
+    padding-bottom: 400px;
+    width: 600px;
+    height: 840px;
+  }
+  .dianaedad {
+    background-image: url("./imgs/ejercicio/Dianaedad.png");
+    position: static;
+    white-space: nowrap;
+    background-repeat: no-repeat;
+    background-size: contain;
+    padding-bottom: 400px;
+    width: 600px;
+    height: 840px;
+  }
+  .dianaedad .mi {
+    width: 50px;
+    height: 49px;
+    font-size: 35px;
+    border: 0px;
+    border-bottom: 2px solid black;
+  }
+  .dianaedad .nombre {
+    width: 130px;
+    height: 49px;
+    font-size: 35px;
+    border: 0px;
+    border-bottom: 2px solid black;
+  }
+  .dianaedad .es {
+    width: 50px;
+    height: 49px;
+    font-size: 35px;
+    border: 0px;
+    border-bottom: 2px solid black;
+  }
+  .carlosedad {
+    background-image: url("./imgs/ejercicio/Carlosedad.png");
+    position: static;
+    white-space: nowrap;
+    background-repeat: no-repeat;
+    background-size: contain;
+    padding-bottom: 400px;
+    width: 600px;
+    height: 840px;
+  }
+  .mariaedad {
+    background-image: url("./imgs/ejercicio/Mariaedad.png");
+    position: static;
+    white-space: nowrap;
+    background-repeat: no-repeat;
+    background-size: contain;
+    padding-bottom: 400px;
+    width: 600px;
+    height: 840px;
+  }
+  .javieredad {
+    background-image: url("./imgs/ejercicio/Javieredad.png");
+    position: static;
+    white-space: nowrap;
+    background-repeat: no-repeat;
+    background-size: contain;
+    padding-bottom: 400px;
+    width: 600px;
+    height: 840px;
+  }
+  .javierfinal {
+    background-image: url("./imgs/ejercicio/Javieredad.png");
+    position: static;
+    white-space: nowrap;
+    background-repeat: no-repeat;
+    background-size: contain;
+    padding-bottom: 400px;
+    width: 600px;
+    height: 840px;
+  }
+  /* Todo esto es de javier */
+  .javierInputFinal1 {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    font-size: 23px;
+    top: 150px;
+    left: -40px;
+    border: 0px;
+    border-bottom: 2px solid black;
+  }
+  .javierInputFinal2 {
+    position: relative;
+    width: 90px;
+    height: 30px;
+    font-size: 23px;
+    left: -30px;
+    top: 150px;
+    border: 0px;
+    border-bottom: 2px solid black;
+  }
+  .javierInputFinal3 {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    font-size: 23px;
+    top: 150px;
+    left: -20px;
+    border: 0px;
+    border-bottom: 2px solid black;
+  }
+  .javierInputFinal4 {
+    position: relative;
+    width: 70px;
+    height: 30px;
+    font-size: 23px;
+    border: 0px;
+    left: -130px;
+    top: 200px;
+    border-bottom: 2px solid black;
+  }
+  .javierInputFinal5 {
+    position: relative;
+    width: 70px;
+    height: 30px;
+    font-size: 23px;
+    top: 250px;
+    left: -180px;
+    border: 0px;
+    border-bottom: 2px solid black;
+  }
+  .javierInputFinal6 {
+    position: relative;
+    font-size: 23px;
+    width: 30px;
+    top: 198px;
+    left: 280px;
+  }
+  .javierInputFinal7 {
+    position: relative;
+    font-size: 23px;
+    top: 185px;
+    left: -20px;
+  }
+  .contenedorFinal {
+    display: flex;
+    flex-direction: column;
+  }
+  .globoJavier {
+    background-image: url("./imgs/ejercicio/mano\ con\ tarjeta\ vacia.png");
+    position: static;
+    white-space: nowrap;
+    background-repeat: no-repeat;
+    background-size: contain;
+    bottom: 300px;
+    width: 600px;
+    height: 440px;
+  }
+  /* Todo esto es de javier */
+  .elenainputfinal1 {
+    position: relative;
+    width: 40px;
+    height: 30px;
+    font-size: 23px;
+    top: 150px;
+    left: -100px;
+    border: 0px;
+    border-bottom: 2px solid black;
+  }
+  .elenainputfinal2 {
+    position: relative;
+    width: 70px;
+    height: 30px;
+    font-size: 23px;
+    left: -90px;
+    top: 150px;
+    border: 0px;
+    border-bottom: 2px solid black;
+  }
+  /* Todo esto es de maria */
+  .mariaInputFinal1 {
+    position: relative;
+    width: 40px;
+    height: 30px;
+    font-size: 23px;
+    top: 150px;
+    left: -100px;
+    border: 0px;
+    border-bottom: 2px solid black;
+  }
+  .mariaInputFinal2 {
+    position: relative;
+    width: 70px;
+    height: 30px;
+    font-size: 23px;
+    left: -90px;
+    top: 150px;
+    border: 0px;
+    border-bottom: 2px solid black;
+  }
+  .mariaInputFinal3 {
+    position: relative;
+    width: 70px;
+    height: 30px;
+    font-size: 23px;
+    top: 150px;
+    left: -80px;
+    border: 0px;
+    border-bottom: 2px solid black;
+  }
+  .mariaInputFinal4 {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    font-size: 23px;
+    left: 120px;
+    top: 150px;
+  }
+  .mariaInputFinal5 {
+    position: relative;
+    width: 70px;
+    height: 30px;
+    font-size: 23px;
+    top: 95px;
+    left: -30px;
+    border: 0px;
+    border-bottom: 2px solid black;
+  }
+  .mariaInputFinal6 {
+    position: relative;
+    font-size: 20px;
+    width: 30px;
+    top: 100px;
+    left: 190px;
+  }
+
+  .globoMaria {
+    background-image: url("./imgs/ejercicio/mano\ con\ tarjeta\ vacia.png");
+    position: static;
+    white-space: nowrap;
+    background-repeat: no-repeat;
+    background-size: contain;
+    bottom: -300px;
+    width: 600px;
+    height: 440px;
+  }
+  /* Todo lo de aqui es de maria */
+  .personaje {
+    width: 200px;
+    height: auto;
+  }
+  .personajeElena {
+    width: 220px;
+    height: auto;
+  }
+  .personajeMaria {
+    width: 175px;
+    height: auto;
+  }
+  .luismiedad {
+    background-image: url("./imgs/ejercicio/Luisedad.png");
+    position: static;
+    white-space: nowrap;
+    background-repeat: no-repeat;
+    background-size: contain;
+    padding-bottom: 400px;
+    width: 600px;
+    height: 840px;
+  }
+  .EncuentroCarlos {
+    background-image: url("./imgs/ejercicio/casaCarlos.png");
+    position: static;
+    white-space: nowrap;
+    background-repeat: no-repeat;
+    background-size: contain;
+    padding-bottom: 400px;
+    width: 600px;
+    height: 840px;
+  }
+
+  .div2nuevas {
+    position: relative;
+    bottom: 240px;
+    left: 420px;
+  }
+  .edad1 {
+    top: 100px;
+    left: 120px;
+    position: relative;
+    margin-right: 240px;
+  }
+  .edad2 {
+    position: relative;
+    top: 40px;
+    left: 90px;
+    font-size: 40px;
+  }
+  .edad3 {
+    position: relative;
+    top: 130px;
+    left: 90px;
+    font-size: 40px;
+  }
+  .edad3 input {
+    width: 110px;
+    height: 49px;
+    font-size: 35px;
+    border: 0px;
+    border-bottom: 2px solid black;
+  }
+  .edad4 {
+    position: relative;
+    top: 130px;
+    left: 90px;
+    font-size: 40px;
+  }
+
+
+  .edad4 input {
+    width: 110px;
+    height: 49px;
+    font-size: 35px;
+    border: 0px;
+    border-bottom: 2px solid black;
+  }
+  .nuevas1 {
+    position: relative;
+    margin-right: 240px;
+  }
+  .nuevas2 {
+    position: relative;
+    margin-top: -40px;
+    margin-left: -110px;
+    font-size: 18px;
+  }
+  .nuevas3 {
+    position: relative;
+    margin-top: 420px;
+    margin-right: 250px;
+  }
+  .nuevas4 {
+    position: relative;
+    margin-top: -20px;
+    margin-right: 120px;
+    font-size: 18px;
+  }
+  .encuentro5 {
+    position: relative;
+    margin-top: -20px;
+    margin-right: 120px;
+    font-size: 18px;
+  }
+  .encuentro1 {
+    position: relative;
+    margin-right: 240px;
+  }
+  .encuentro2 {
+    position: relative;
+    margin-top: -40px;
+    margin-left: -110px;
+    font-size: 18px;
+  }
+  .encuentro3 {
+    position: relative;
+    margin-top: 420px;
+    margin-right: 250px;
+  }
+  .encuentro4 {
+    position: relative;
+    margin-top: -20px;
+    margin-right: 120px;
+    font-size: 18px;
+  }
+  .encuentro6 {
+    position: relative;
+    margin-right: 240px;
+  }
+  .encuentro7 {
+    position: relative;
+    margin-top: -40px;
+    margin-left: -110px;
+    font-size: 18px;
+  }
+  .encuentro8 {
+    position: relative;
+    margin-top: 420px;
+    margin-right: 250px;
+  }
+  .encuentro9 {
+    position: relative;
+    margin-top: -20px;
+    margin-right: 120px;
+    font-size: 18px;
+  }
+
+  .comictxt {
+      position: relative;
+      margin-top: -30px;
+      margin-right: 60px;
+      font-size: 18px;
+  }
+
+  .comic1 {
+    background-image: url("./imgs/ejercicio/comicEjemplo1.jpg");
+    width: 500px;  
+    height: 380px; 
+    background-repeat: no-repeat;
+    background-size: cover;  /* Asegura que la imagen cubra todo el contenedor */
+    background-position: center;
+    display: inline-block;
+    margin: 20px;
+  }
+  
+  .comic {
+    background-image: url("./imgs/ejercicio/comicEjemplo2.jpg");
+    width: 500px;  
+    height: 380px; 
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: inline-block;
+    margin: 20px;
+  }
+
+  .recordemos1 {
+    position: relative;
+    margin-top: -1px;
+    margin-left: -110px;
+    font-size: 18px;
+  }
+  
+
+
+  .YoSoyImg {
+    display: flex;
+    white-space: nowrap;
+
+    background-image: url("./imgs/ejercicio/yo\ soy\ poppins\ \(1\).png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 450px;
+    height: 450px;
+  }
+  .YoSoyImg .yosoy1 {
+    position: absolute;
+    margin-bottom: 400px;
+    margin-left: 140px;
+    width: fit-content;
+    height: fit-content;
+  }
+  .YoSoyImg .yosoy2 {
+    position: absolute;
+    margin-top: 190px;
+  }
+  .YoSoyImg .yosoy3 {
+    position: absolute;
+    margin-top: 190px;
+    margin-left: 140px;
+  }
+  .YoSoyImg .yosoy4 {
+    position: absolute;
+    margin-top: 190px;
+    margin-left: 280px;
+    width: fit-content;
+    height: fit-content;
+  }
+  .dragButton1,
+  .dragButton2,
+  .dragButton3,
+  .dragButton4,
+  .dragButton5,
+  .dragButton6 {
+    font-size: larger;
+  }
+
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 10px;
+  }
+  
+  .card {
+    border: solid #2cb7b3 3px;
+    border-radius: 10px;
+    width: 300px;
+    padding: 10px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .card-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .card-header p {
+    margin: 0;
+    font-weight: bold;
+  }
+  
+  .card-body img {
+    width: 100%;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+
+  .menuOption {
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center;
+    gap: 20px; /* Espacio entre las imágenes */
+  }
+
+  .menuOption p {
+    align-items: center;
+  }
+
+  .menuButton {
+    display: flex;
+    align-items: center;
+  }
+  .scene {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 99%;
+  }
+  .imagenPrueba {
+    width: 200px;
+    height: auto;
+  }
+  .doodle {
+    width: 101.3%;
+    height: 400px;
+    margin: -10px;
+    margin-bottom: -240px;
+  }
+  .logo {
+    margin-top: -600px;
+    width: 300px;
+    height: auto;
+    padding-bottom: 40px;
+    padding-left: 50px;
+  }
+  .letra_img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .section {
+    display: none;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .section.active {
+    display: flex;
+    flex-direction: column;
+  }
+  .dots {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+  }
+
+  .dot {
+    height: 15px;
+    width: 15px;
+    margin: 10px;
+    background-color: #000000;
+    border-radius: 50%;
+    display: flex;
+    cursor: pointer;
+  }
+
+  .dot.active {
+    background-color: #2cb7b3;
+  }
+  .carousel {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    min-height: 100vh;
+  }
+  .memory-game {
+    width: 90%;
+    height: 500px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    perspective: 1000px;
+    margin-bottom: 50px;
+  }
+  .memory-card {
+    width: calc(25% - 10px);
+    height: calc(50% - 10px);
+    margin: 5px;
+    position: relative;
+    transform: scale(1);
+    transform-style: preserve-3d;
+    transition: transform 0.5s;
+  }
+  .memory-card:active {
+    transform: scale(0.97);
+    transition: transform 0.2s;
+  }
+  .front-face img {
+    max-width: 100%;
+    max-height: 100%;
+  }
+  .front-face,
+  .back-face {
+    font-size: 24px;
+    border: solid black 1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    position: absolute;
+    border-radius: 5px;
+    background: white;
+    backface-visibility: hidden;
+  }
+  .memory-card.memo-correct {
+    border: solid #2cb7b3 2px;
+  }
+  .back-face {
+    background-color: #d0e4f4;
+  }
+  .front-face {
+    transform: rotateY(180deg);
+  }
+  .memory-card.flip {
+    transform: rotateY(180deg);
+  }
+}
+
+/* Tablet .................................................................................................................*/
+@media screen and (max-width: 1024px) {
+  .scene {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 99%;
+  }
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px; /* Más separación que en desktop o móvil */
+    padding: 20px;
+  }
+  .card {
+        width: 45%;
+    }
+
+  .imagenPrueba {
+    width: 400px;
+    height: auto;
+  }
+  h2 {
+    font-size: xx-large;
+  }
+  p {
+    font-size: x-large;
+  }
+  
+  .dragButton1,
+  .dragButton2,
+  .dragButton3,
+  .dragButton4,
+  .dragButton5,
+  .dragButton6 {
+    font-size: x-large;
+  }
+
+  .card {
+        width: 45%;
+        border: solid #2cb7b3 3px;
+        border-radius: 10px;
+        padding: 10px;
+        margin-bottom: 20px;
+    }
+
+
+  .imagenPrueba {
+    width: 400px;
+    height: auto;
+  }
+  h2 {
+    font-size: xx-large;
+  }
+  p {
+    font-size: x-large;
+  }
+  .rosa {
+    background-color: pink;
+    text-decoration: none;
+  }
+  .amarilla {
+    background-color: yellow;
+    text-decoration: none;
+  }
+  .azul {
+    background-color: lightblue;
+    text-decoration: none;
+  }
+  .verde {
+    background-color: lightgreen;
+    text-decoration: none;
+  }
+  .ElenaEncuentro {
+    background-image: url("./imgs/ejercicio/ElenaEncuentro.png");
+    position: static;
+    white-space: nowrap;
+    background-repeat: no-repeat;
+    background-size: contain;
+    padding-bottom: 400px;
+    width: 500px;
+    height: 700px;
+    display: flex;
+  }
+  .JavierEncuentro {
+    background-image: url("./imgs/ejercicio/JavierEncuentro.png");
+    position: static;
+    white-space: nowrap;
+    background-repeat: no-repeat;
+    background-size: contain;
+    padding-bottom: 400px;
+    width: 500px;
+    height: 700px;
+    display: flex;
+  }
+  .dianaedad {
+    background-image: url("./imgs/ejercicio/Dianaedad.png");
+    position: static;
+    white-space: nowrap;
+    background-repeat: no-repeat;
+    background-size: contain;
+    padding-bottom: 400px;
+    width: 380px;
+    height: 700px;
+    display: flex;
+  }
+  .dianaedad .tengo {
+    font-size: 20px;
+    width: 60px;
+  }
+  .dianaedad .mi {
+    width: 30px;
+    height: 49px;
+    font-size: 20px;
+    border: 0px;
+    border-bottom: 2px solid black;
+  }
+  .dianaedad .nombre {
+    width: 75px;
+    height: 49px;
+    font-size: 20px;
+    border: 0px;
+    border-bottom: 2px solid black;
+  }
+  .dianaedad .es {
+    width: 30px;
+    height: 49px;
+    font-size: 20px;
+    border: 0px;
+    border-bottom: 2px solid black;
+  }
+  .carlosedad {
+    background-image: url("./imgs/ejercicio/Carlosedad.png");
+    position: static;
+    white-space: nowrap;
+    background-repeat: no-repeat;
+    background-size: contain;
+    padding-bottom: 400px;
+    width: 380px;
+    height: 700px;
+    display: flex;
+  }
+
+  .mariaedad {
+    background-image: url("./imgs/ejercicio/Mariaedad.png");
+    position: static;
+    white-space: nowrap;
+    background-repeat: no-repeat;
+    background-size: contain;
+    padding-bottom: 400px;
+    width: 380px;
+    height: 700px;
+    display: flex;
+  }
+  .javieredad {
+    background-image: url("./imgs/ejercicio/Javieredad.png");
+    position: static;
+    white-space: nowrap;
+    background-repeat: no-repeat;
+    background-size: contain;
+    padding-bottom: 400px;
+    width: 380px;
+    height: 700px;
+    display: flex;
+  }
+  .luismiedad {
+    background-image: url("./imgs/ejercicio/Luisedad.png");
+    position: static;
+    white-space: nowrap;
+    background-repeat: no-repeat;
+    background-size: contain;
+    padding-bottom: 400px;
+    width: 380px;
+    height: 700px;
+    display: flex;
+  }
+  .nuevasFormasImg {
+    background-image: url("./imgs/ejercicio/casaRosa.jpg");
+    position: static;
+    white-space: nowrap;
+    background-repeat: no-repeat;
+    background-size: contain;
+    padding-bottom: 400px;
+    width: 500px;
+    height: 700px;
+    display: flex;
+  }
+  #gameCanvas {
+    width: 100%;
+    height: 100%;
+  }
+  canvas {
+    pointer-events: none; /* Para que el canvas no interfiera con los clics en otros elementos */
+  }
+  .nuevasFormasImg {
+    background-image: url("./imgs/ejercicio/casaRosa.jpg");
+    position: static;
+    white-space: nowrap;
+    background-repeat: no-repeat;
+    background-size: contain;
+    padding-bottom: 400px;
+    width: 500px;
+    height: 700px;
+    display: flex;
+  }
+  .EncuentroCarlos {
+    background-image: url("./imgs/ejercicio/casaCarlos.png");
+    position: static;
+    white-space: nowrap;
+    background-repeat: no-repeat;
+    background-size: contain;
+    padding-bottom: 400px;
+    width: 470px;
+    height: 700px;
+    display: flex;
+  }
+
+  .comic1 {
+    background-image: url("./imgs/ejercicio/comicEjemplo1.jpg");
+    width: 350px;  /* Reducción del 30% respecto a PC */
+    height: 266px; /* Reducción del 30% respecto a PC */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: inline-block;
+    margin: 15px;  /* Reducción del 25% respecto a PC */
+}
+
+  .comic {
+    background-image: url("./imgs/ejercicio/comicEjemplo2.jpg");
+    width: 350px;  /* Reducción del 30% respecto a PC */
+    height: 266px; /* Reducción del 30% respecto a PC */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: inline-block;
+    margin: 15px;  /* Reducción del 25% respecto a PC */
+}
+
+.recordemos1 {
+  position: relative;
+  top: -15px;
+  left: 55px;
+  font-size: 2px;
+  width: fit-content;
+  height: fit-content;
+}
+
+  .div2nuevas {
+    position: absolute;
+    bottom: 100px;
+  }
+  .edad1 {
+    position: absolute;
+    left: 70px;
+    top: 150px;
+    z-index: 1;
+    width: fit-content;
+    height: fit-content;
+  }
+  .edad2 {
+    position: relative;
+    top: 90px;
+    left: 135px;
+    font-size: 25px;
+    width: fit-content;
+    height: fit-content;
+  }
+  .edad3 {
+    position: relative;
+    left: 150px;
+    top: 80px;
+    font-size: 25px;
+    width: fit-content;
+    height: fit-content;
+  }
+  .edad3 input {
+    width: 75px;
+    height: 35px;
+    font-size: 25px;
+    border: 0px;
+    border-bottom: 2px solid black;
+  }
+  .edad4 {
+    position: relative;
+    top: 70px;
+    left: 135px;
+    font-size: 20px;
+    width: fit-content;
+    height: fit-content;
+  }
+  .edad4 input {
+    width: 75px;
+    height: 35px;
+    font-size: 25px;
+    border: 0px;
+    border-bottom: 2px solid black;
+  }
+  .nuevas1 {
+    position: relative;
+    left: 120px;
+    top: 60px;
+    z-index: 1;
+    width: fit-content;
+    height: fit-content;
+  }
+  .nuevas2 {
+    position: relative;
+    top: 15px;
+    left: 165px;
+    font-size: 12px;
+    width: fit-content;
+    height: fit-content;
+  }
+  .nuevas3 {
+    position: relative;
+    top: 420px;
+    left: 0px;
+    width: fit-content;
+    height: fit-content;
+  }
+  .nuevas4 {
+    position: relative;
+    top: 465px;
+    left: -29px;
+    font-size: 12px;
+    width: fit-content;
+    height: fit-content;
+  }
+  .encuentro5 {
+    position: relative;
+    top: 475px;
+    left: 0px;
+    font-size: 12px;
+    width: fit-content;
+    height: fit-content;
+  }
+  .encuentro1 {
+    position: relative;
+    left: 120px;
+    top: -10px;
+    z-index: 1;
+    width: fit-content;
+    height: fit-content;
+  }
+  .encuentro2 {
+    position: relative;
+    top: -45px;
+    left: 155px;
+    font-size: 12px;
+    width: fit-content;
+    height: fit-content;
+  }
+  .encuentro3 {
+    position: relative;
+    top: 480px;
+    left: 0px;
+    width: fit-content;
+    height: fit-content;
+  }
+  .encuentro4 {
+    position: relative;
+    top: 540px;
+    left: -29px;
+    font-size: 12px;
+    width: fit-content;
+    height: fit-content;
+  }
+  .encuentro6 {
+    position: relative;
+    left: 120px;
+    top: -10px;
+    z-index: 1;
+    width: fit-content;
+    height: fit-content;
+  }
+  .encuentro7 {
+    position: relative;
+    top: -35px;
+    left: 155px;
+    font-size: 12px;
+    width: fit-content;
+    height: fit-content;
+  }
+  .encuentro8 {
+    position: relative;
+    top: 480px;
+    left: 0px;
+    width: fit-content;
+    height: fit-content;
+  }
+  .encuentro9 {
+    position: relative;
+    top: 510px;
+    left: -10px;
+    font-size: 12px;
+    width: fit-content;
+    height: fit-content;
+  }
+
+  .comictxt {
+    position: relative;
+    margin-top: -45px; /* Reducción proporcional respecto a PC */
+    margin-right: 40px;  /* Reducción proporcional respecto a PC */
+    font-size: 12px;    
+}
+
+  .YoSoyImg {
+    background-image: url("./imgs/ejercicio/YoSoy.jpg");
+    display: flex;
+    align-self: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 550px;
+    height: 500px;
+  }
+
+  .YoSoyImg .yosoy1 {
+    position: relative;
+    top: 10px;
+    left: 80px;
+    width: fit-content;
+    height: fit-content;
+  }
+  .YoSoyImg .yosoy2 {
+    position: relative;
+    top: 130px;
+    left: 0px;
+    width: fit-content;
+    height: fit-content;
+  }
+  .YoSoyImg .yosoy3 {
+    position: relative;
+    top: 150px;
+    left: 50px;
+    width: fit-content;
+    height: fit-content;
+  }
+  .YoSoyImg .yosoy4 {
+    position: relative;
+    top: 150px;
+    left: 155px;
+    width: fit-content;
+    height: fit-content;
+  }
+
+  .relacionar {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 200px;
+    position: relative;
+  }
+
+  .columnaRelacion {
+    width: 40%;
+    /*z-index: 2;*/
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .columnaRelacion img {
+    width: 100px;
+    height: auto;
+    border: 1px solid #000;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #fff;
+  }
+
+  .columnaRelacion span {
+    padding: 10px;
+    border: 1px solid #000;
+    border-radius: 5px;
+    background-color: #fff;
+    cursor: pointer;
+    text-align: center;
+  }
+
+  .columnaRelacion img {
+    width: 80px;
+  }
+  .doodle {
+    width: 108%;
+    height: 400px;
+    margin: -10px;
+    margin-bottom: -200px;
+  }
+  .letra_img {
+    width: 50px;
+    height: 50px;
+  }
+  .logo {
+    margin-top: -600px;
+    width: 300px;
+    height: auto;
+    padding-bottom: 70px;
+  }
+  .navigation {
+    text-align: center;
+  }
+
+  .section {
+    display: none;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .section.active {
+    display: flex;
+    flex-direction: column;
+  }
+  .carousel {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    min-height: 100vh;
+  }
+  .imgExpose {
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    gap: 20px; /* Espacio entre las imágenes */
+  }
+  .imgExpose img {
+    display: block;
+    /* Ajusta el tamaño según sea necesario */
+    width: 450px;
+    height: auto;
+  }
+
+  .dots {
+    display: flex;
+    flex-direction: column;
+    position: center;
+    align-items: start;
+  }
+  .dots .menuOption {
+    display: flex;
+    align-items: center;
+  }
+  .dots .menuOption .span {
+    display: flex;
+    flex-direction: column;
+    position: center;
+    align-items: start;
+  }
+  .controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+  }
+  .controlsCards {
+    border: 10px;
+  }
+  .menuOption {
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center;
+    gap: 20px; /* Espacio entre las imágenes */
+  }
+
+  .menuOption p {
+    align-items: center;
+  }
+  .dot {
+    height: 15px;
+    width: 15px;
+    margin: 0 5px;
+    background-color: #bbb;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  #gameCanvas {
+    width: 100%;
+    height: 100%;
+  }
+  canvas {
+    pointer-events: none; /* Para que el canvas no interfiera con los clics en otros elementos */
+  }
+
+  .dot.active {
+    background-color: #717171;
+  }
+  .vertical-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .container {
+    width: 90%;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  .character {
+    margin-left: auto;
+    width: 30px;
+    height: auto;
+  }
+  .memory-game {
+    width: 90%;
+    height: 1000px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    perspective: 1000px;
+    margin-bottom: 50px;
+  }
+  .memory-card {
+    width: calc(50% - 10px);
+    height: calc(25% - 10px);
+    margin: 5px;
+    position: relative;
+    transform: scale(1);
+    transform-style: preserve-3d;
+    transition: transform 0.5s;
+  }
+  .memory-card:active {
+    transform: scale(0.97);
+    transition: transform 0.2s;
+  }
+  .front-face img {
+    max-width: 100%;
+    max-height: 100%;
+  }
+  .front-face,
+  .back-face {
+    font-size: 30px;
+    border: solid black 1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    position: absolute;
+    border-radius: 5px;
+    background: white;
+    backface-visibility: hidden;
+  }
+  .back-face {
+    background-color: #d0e4f4;
+  }
+  .front-face {
+    transform: rotateY(180deg);
+  }
+  .memory-card.flip {
+    transform: rotateY(180deg);
+  }
+  /* Todo esto es de javier */
+  .javierInputFinal1 {
+    position: relative;
+    width: 40px;
+    height: 30px;
+    font-size: 18px;
+    top: 80px;
+    left: 70px;
+    border: 0px;
+    border-bottom: 2px solid black;
+  }
+  .javierInputFinal2 {
+    position: relative;
+    width: 90px;
+    height: 30px;
+    font-size: 18px;
+    left: 80px;
+    top: 80px;
+    border: 0px;
+    border-bottom: 2px solid black;
+  }
+  .javierInputFinal3 {
+    position: relative;
+    width: 40px;
+    height: 30px;
+    font-size: 18px;
+    top: 110px;
+    left: -20px;
+    border: 0px;
+    border-bottom: 2px solid black;
+  }
+  .javierInputFinal4 {
+    position: relative;
+    width: 70px;
+    height: 30px;
+    font-size: 18px;
+    border: 0px;
+    left: -10px;
+    top: 110px;
+    border-bottom: 2px solid black;
+  }
+  .javierInputFinal5 {
+    position: relative;
+    width: 60px;
+    height: 30px;
+    font-size: 18px;
+    top: 140px;
+    left: -140px;
+    border: 0px;
+    border-bottom: 2px solid black;
+  }
+  .javierInputFinal6 {
+    position: relative;
+    font-size: 18px;
+    width: 30px;
+    top: 97px;
+    left: 180px;
+  }
+  .javierInputFinal7 {
+    position: relative;
+    font-size: 15px;
+    top: 85px;
+    width: 130px;
+    background-color: white;
+    left: 80px;
+  }
+  .contenedorFinal {
+    display: flex;
+    flex-direction: column;
+  }
+  .globoJavier {
+    background-image: url("./imgs/ejercicio/mano\ con\ tarjeta\ vacia.png");
+    position: static;
+    white-space: nowrap;
+    background-repeat: no-repeat;
+    background-size: contain;
+    bottom: 300px;
+    width: 300px;
+    height: 300px;
+  }
+  /* Todo esto es de javier */
+  .elenainputfinal1 {
+    position: relative;
+    width: 40px;
+    height: 30px;
+    font-size: 18px;
+    top: 73px;
+    left: -20px;
+    border: 0px;
+    border-bottom: 2px solid black;
+  }
+  .elenainputfinal2 {
+    position: relative;
+    width: 70px;
+    height: 30px;
+    font-size: 18px;
+    left: -10px;
+    top: 73px;
+    border: 0px;
+    border-bottom: 2px solid black;
+  }
+  /* Todo esto es de maria */
+  .mariaInputFinal1 {
+    position: relative;
+    width: 50px;
+    height: 30px;
+    font-size: 18px;
+    top: 73px;
+    left: 10px;
+    border: 0px;
+    border-bottom: 2px solid black;
+  }
+  .mariaInputFinal2 {
+    position: relative;
+    width: 70px;
+    height: 30px;
+    font-size: 18px;
+    left: 10px;
+    top: 73px;
+    border: 0px;
+    border-bottom: 2px solid black;
+  }
+  .mariaInputFinal3 {
+    position: relative;
+    width: 70px;
+    height: 30px;
+    font-size: 18px;
+    top: 105px;
+    left: -100px;
+    border: 0px;
+    border-bottom: 2px solid black;
+  }
+  .mariaInputFinal4 {
+    position: relative;
+    width: 40px;
+    height: 30px;
+    font-size: 18px;
+    left: 105px;
+    top: 90px;
+  }
+  .mariaInputFinal5 {
+    position: relative;
+    width: 70px;
+    height: 30px;
+    font-size: 18px;
+    top: 38px;
+    left: 70px;
+    border: 0px;
+    border-bottom: 2px solid black;
+  }
+  .mariaInputFinal6 {
+    position: relative;
+    font-size: 20px;
+    width: 140px;
+    top: 20px;
+    left: 90px;
+    background-color: white;
+  }
+
+  .globoMaria {
+    background-image: url("./imgs/ejercicio/mano\ con\ tarjeta\ vacia.png");
+    position: static;
+    white-space: nowrap;
+    background-repeat: no-repeat;
+    background-size: contain;
+    bottom: -300px;
+    width: 300px;
+    height: 300px;
+    margin-bottom: -45px;
+  }
+  /* Todo lo de aqui es de maria */
+  .personaje {
+    width: 100px;
+    height: auto;
+  }
+  .imagenTarjetas {
+    width: 80%;
+    height: auto;
+  }
+  .personajeElena {
+    width: 150px;
+    height: auto;
+  }
+  .personajeMaria {
+    width: 100px;
+    height: auto;
+  }
+}
+/* Teléfono ---------------------------------------------------------------------------------------------- */
+@media screen and (max-width: 600px) {
+  .scene {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 99%;
+  }
+
+  .card-container {
+    display: flex;
+    flex-direction: column;  /* Acomoda en columna */
+    align-items: center;     /* Centra horizontalmente */
+    gap: 20px;               /* Espacio entre cards */
+    padding: 10px;
+  }
+
+  .card {
+    width: 90%;
+    border: solid #2cb7b3 3px;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 20px;
+  }
+
+  .dragButton1,
+  .dragButton2,
+  .dragButton3,
+  .dragButton4,
+  .dragButton5,
+  .dragButton6 {
+    font-size: x-large;
+  }
+  .imagenPrueba {
+    width: 400px;
+    height: auto;
+  }
+  h2 {
+    font-size: xx-large;
+  }
+  p {
+    font-size: x-large;
+  }
+  .rosa {
+    background-color: pink;
+    text-decoration: none;
+  }
+  .amarilla {
+    background-color: yellow;
+    text-decoration: none;
+  }
+  .azul {
+    background-color: lightblue;
+    text-decoration: none;
+  }
+  .verde {
+    background-color: lightgreen;
+    text-decoration: none;
+  }
+  .ElenaEncuentro {
+    background-image: url("./imgs/ejercicio/ElenaEncuentro.png");
+    position: static;
+    white-space: nowrap;
+    background-repeat: no-repeat;
+    background-size: contain;
+    padding-bottom: 400px;
+    width: 500px;
+    height: 700px;
+    display: flex;
+  }
+  .JavierEncuentro {
+    background-image: url("./imgs/ejercicio/JavierEncuentro.png");
+    position: static;
+    white-space: nowrap;
+    background-repeat: no-repeat;
+    background-size: contain;
+    padding-bottom: 400px;
+    width: 500px;
+    height: 700px;
+    display: flex;
+  }
+  .dianaedad {
+    background-image: url("./imgs/ejercicio/Dianaedad.png");
+    position: static;
+    white-space: nowrap;
+    background-repeat: no-repeat;
+    background-size: contain;
+    padding-bottom: 400px;
+    width: 380px;
+    height: 700px;
+    display: flex;
+  }
+  .dianaedad .tengo {
+    font-size: 20px;
+    width: 60px;
+  }
+  .dianaedad .mi {
+    width: 30px;
+    height: 49px;
+    font-size: 20px;
+    border: 0px;
+    border-bottom: 2px solid black;
+  }
+  .dianaedad .nombre {
+    width: 75px;
+    height: 49px;
+    font-size: 20px;
+    border: 0px;
+    border-bottom: 2px solid black;
+  }
+  .dianaedad .es {
+    width: 30px;
+    height: 49px;
+    font-size: 20px;
+    border: 0px;
+    border-bottom: 2px solid black;
+  }
+  .carlosedad {
+    background-image: url("./imgs/ejercicio/Carlosedad.png");
+    position: static;
+    white-space: nowrap;
+    background-repeat: no-repeat;
+    background-size: contain;
+    padding-bottom: 400px;
+    width: 380px;
+    height: 700px;
+    display: flex;
+  }
+
+  .mariaedad {
+    background-image: url("./imgs/ejercicio/Mariaedad.png");
+    position: static;
+    white-space: nowrap;
+    background-repeat: no-repeat;
+    background-size: contain;
+    padding-bottom: 400px;
+    width: 380px;
+    height: 700px;
+    display: flex;
+  }
+  .javieredad {
+    background-image: url("./imgs/ejercicio/Javieredad.png");
+    position: static;
+    white-space: nowrap;
+    background-repeat: no-repeat;
+    background-size: contain;
+    padding-bottom: 400px;
+    width: 380px;
+    height: 700px;
+    display: flex;
+  }
+  .luismiedad {
+    background-image: url("./imgs/ejercicio/Luisedad.png");
+    position: static;
+    white-space: nowrap;
+    background-repeat: no-repeat;
+    background-size: contain;
+    padding-bottom: 400px;
+    width: 380px;
+    height: 700px;
+    display: flex;
+  }
+  .nuevasFormasImg {
+    background-image: url("./imgs/ejercicio/casaRosa.jpg");
+    position: static;
+    white-space: nowrap;
+    background-repeat: no-repeat;
+    background-size: contain;
+    padding-bottom: 400px;
+    width: 500px;
+    height: 700px;
+    display: flex;
+  }
+  #gameCanvas {
+    width: 100%;
+    height: 100%;
+  }
+  canvas {
+    pointer-events: none; /* Para que el canvas no interfiera con los clics en otros elementos */
+  }
+  .nuevasFormasImg {
+    background-image: url("./imgs/ejercicio/casaRosa.jpg");
+    position: static;
+    white-space: nowrap;
+    background-repeat: no-repeat;
+    background-size: contain;
+    padding-bottom: 400px;
+    width: 500px;
+    height: 700px;
+    display: flex;
+  }
+  .EncuentroCarlos {
+    background-image: url("./imgs/ejercicio/casaCarlos.png");
+    position: static;
+    white-space: nowrap;
+    background-repeat: no-repeat;
+    background-size: contain;
+    padding-bottom: 400px;
+    width: 470px;
+    height: 700px;
+    display: flex;
+  }
+
+  .comic1 {
+    background-image: url("./imgs/ejercicio/comicEjemplo1.jpg");
+    width: 250px;  /* Reducción del 50% respecto a PC */
+    height: 190px; /* Reducción del 50% respecto a PC */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: inline-block;
+    margin: 10px;  /* Reducción del 50% respecto a PC */
+}
+
+
+  .comic {
+    background-image: url("./imgs/ejercicio/comicEjemplo2.jpg");
+    width: 250px;  /* Reducción del 50% respecto a PC */
+    height: 190px; /* Reducción del 50% respecto a PC */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: inline-block;
+    margin: 10px;  /* Reducción del 50% respecto a PC */
+}
+
+.recordemos1 {
+  position: relative;
+  top: -35px;
+  left: 50px;
+  font-size: 12px;
+  width: fit-content;
+  height: fit-content;
+}
+
+  .div2nuevas {
+    position: absolute;
+    bottom: 100px;
+  }
+  .edad1 {
+    position: absolute;
+    left: 70px;
+    top: 150px;
+    z-index: 1;
+    width: fit-content;
+    height: fit-content;
+  }
+  .edad2 {
+    position: relative;
+    top: 90px;
+    left: 135px;
+    font-size: 25px;
+    width: fit-content;
+    height: fit-content;
+  }
+  .edad3 {
+    position: relative;
+    left: 150px;
+    top: 80px;
+    font-size: 25px;
+    width: fit-content;
+    height: fit-content;
+  }
+  .edad3 input {
+    width: 75px;
+    height: 35px;
+    font-size: 25px;
+    border: 0px;
+    border-bottom: 2px solid black;
+  }
+  .edad4 {
+    position: relative;
+    top: 70px;
+    left: 135px;
+    font-size: 20px;
+    width: fit-content;
+    height: fit-content;
+  }
+  .edad4 input {
+    width: 75px;
+    height: 35px;
+    font-size: 25px;
+    border: 0px;
+    border-bottom: 2px solid black;
+  }
+  .nuevas1 {
+    position: relative;
+    left: 120px;
+    top: 60px;
+    z-index: 1;
+    width: fit-content;
+    height: fit-content;
+  }
+  .nuevas2 {
+    position: relative;
+    top: 15px;
+    left: 165px;
+    font-size: 12px;
+    width: fit-content;
+    height: fit-content;
+  }
+  .nuevas3 {
+    position: relative;
+    top: 420px;
+    left: 0px;
+    width: fit-content;
+    height: fit-content;
+  }
+  .nuevas4 {
+    position: relative;
+    top: 465px;
+    left: -10px;
+    font-size: 12px;
+    width: fit-content;
+    height: fit-content;
+  }
+  .encuentro5 {
+    position: relative;
+    top: 475px;
+    left: 0px;
+    font-size: 12px;
+    width: fit-content;
+    height: fit-content;
+  }
+  .encuentro1 {
+    position: relative;
+    left: 120px;
+    top: -10px;
+    z-index: 1;
+    width: fit-content;
+    height: fit-content;
+  }
+  .encuentro2 {
+    position: relative;
+    top: -45px;
+    left: 140px;
+    font-size: 12px;
+    width: fit-content;
+    height: fit-content;
+  }
+  .encuentro3 {
+    position: relative;
+    top: 480px;
+    left: 0px;
+    width: fit-content;
+    height: fit-content;
+  }
+  .encuentro4 {
+    position: relative;
+    top: 500px;
+    left: -10px;
+    font-size: 12px;
+    width: fit-content;
+    height: fit-content;
+  }
+  .encuentro6 {
+    position: relative;
+    left: 120px;
+    top: -10px;
+    z-index: 1;
+    width: fit-content;
+    height: fit-content;
+  }
+  .encuentro7 {
+    position: relative;
+    top: -35px;
+    left: 155px;
+    font-size: 12px;
+    width: fit-content;
+    height: fit-content;
+  }
+  .encuentro8 {
+    position: relative;
+    top: 480px;
+    left: 0px;
+    width: fit-content;
+    height: fit-content;
+  }
+  .encuentro9 {
+    position: relative;
+    top: 510px;
+    left: -10px;
+    font-size: 12px;
+    width: fit-content;
+    height: fit-content;
+  }
+
+  .comictxt {
+    position: relative;
+    margin-top: -65px; /* Reducción proporcional respecto a PC */
+    margin-right: 40px;  /* Reducción proporcional respecto a PC */
+    font-size: 10px;    
+}
+
+  .YoSoyImg {
+    display: flex;
+    align-self: center;
+    background-image: url("./imgs/ejercicio/YoSoy.jpg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 350px;
+    height: 500px;
+  }
+
+  .YoSoyImg .yosoy1 {
+    position: relative;
+    top: -10px;
+    left: 10px;
+    width: fit-content;
+    height: fit-content;
+  }
+  .YoSoyImg .yosoy2 {
+    position: relative;
+    top: 45px;
+    left: -35px;
+    width: fit-content;
+    height: fit-content;
+  }
+  .YoSoyImg .yosoy3 {
+    position: relative;
+    top: 45px;
+    left: -5px;
+    width: fit-content;
+    height: fit-content;
+  }
+  .YoSoyImg .yosoy4 {
+    position: relative;
+    top: 45px;
+    left: 35px;
+    width: fit-content;
+    height: fit-content;
+  }
+  .relacionar {
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    gap: 100px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .columnaRelacion {
+    width: 40%;
+    /*z-index: 2;*/
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+  }
+
+  .columnaRelacion img {
+    width: 100px;
+    height: auto;
+    border: 1px solid #000;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #fff;
+  }
+
+  .columnaRelacion span {
+    padding: 7px;
+    border: 1px solid #000;
+    border-radius: 5px;
+    background-color: #fff;
+    cursor: pointer;
+    text-align: center;
+  }
+
+  .columnaRelacion img {
+    width: 80px;
+  }
+  .doodle {
+    width: 108%;
+    height: 400px;
+    margin: -10px;
+    margin-bottom: -200px;
+  }
+  .letra_img {
+    width: 50px;
+    height: 50px;
+  }
+  .logo {
+    margin-top: -600px;
+    width: 300px;
+    height: auto;
+    padding-bottom: 70px;
+  }
+  .navigation {
+    text-align: center;
+  }
+
+  .section {
+    display: none;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .section.active {
+    display: flex;
+    flex-direction: column;
+  }
+  .carousel {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    min-height: 100vh;
+  }
+  .imgExpose {
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    gap: 20px; /* Espacio entre las imágenes */
+  }
+  .imgExpose img {
+    display: block;
+    /* Ajusta el tamaño según sea necesario */
+    width: 450px;
+    height: auto;
+  }
+
+  .dots {
+    display: flex;
+    flex-direction: column;
+    position: center;
+    align-items: start;
+  }
+  .dots .menuOption {
+    display: flex;
+    align-items: center;
+  }
+  .dots .menuOption .span {
+    display: flex;
+    flex-direction: column;
+    position: center;
+    align-items: start;
+  }
+  .controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+  }
+  .controlsCards {
+    flex-wrap: wrap;
+    border: 10px;
+  }
+  .menuOption {
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center;
+    gap: 20px; /* Espacio entre las imágenes */
+  }
+
+  .menuOption p {
+    align-items: center;
+  }
+  .dot {
+    height: 15px;
+    width: 15px;
+    margin: 0 5px;
+    background-color: #bbb;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+
+  .dot.active {
+    background-color: #717171;
+  }
+  .vertical-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .container {
+    width: 90%;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  .character {
+    margin-left: auto;
+    width: 30px;
+    height: auto;
+  }
+  .memory-game {
+    width: 90%;
+    height: 600px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    perspective: 1000px;
+    margin-bottom: 50px;
+  }
+  .memory-card {
+    width: calc(50% - 10px);
+    height: calc(25% - 10px);
+    margin: 5px;
+    position: relative;
+    transform: scale(1);
+    transform-style: preserve-3d;
+    transition: transform 0.5s;
+  }
+  .memory-card:active {
+    transform: scale(0.97);
+    transition: transform 0.2s;
+  }
+  .front-face img {
+    max-width: 100%;
+    max-height: 100%;
+  }
+  .front-face,
+  .back-face {
+    font-size: 30px;
+    border: solid black 1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    position: absolute;
+    border-radius: 5px;
+    background: white;
+    backface-visibility: hidden;
+  }
+  .back-face {
+    background-color: #d0e4f4;
+  }
+  .front-face {
+    transform: rotateY(180deg);
+  }
+  .memory-card.flip {
+    transform: rotateY(180deg);
+  }
+
+  /* Todo esto es de javier */
+  .javierInputFinal1 {
+    position: relative;
+    width: 40px;
+    height: 30px;
+    font-size: 18px;
+    top: 80px;
+    left: 70px;
+    border: 0px;
+    border-bottom: 2px solid black;
+  }
+  .javierInputFinal2 {
+    position: relative;
+    width: 90px;
+    height: 30px;
+    font-size: 18px;
+    left: 80px;
+    top: 80px;
+    border: 0px;
+    border-bottom: 2px solid black;
+  }
+  .javierInputFinal3 {
+    position: relative;
+    width: 40px;
+    height: 30px;
+    font-size: 18px;
+    top: 110px;
+    left: -20px;
+    border: 0px;
+    border-bottom: 2px solid black;
+  }
+  .javierInputFinal4 {
+    position: relative;
+    width: 70px;
+    height: 30px;
+    font-size: 18px;
+    border: 0px;
+    left: -10px;
+    top: 110px;
+    border-bottom: 2px solid black;
+  }
+  .javierInputFinal5 {
+    position: relative;
+    width: 60px;
+    height: 30px;
+    font-size: 18px;
+    top: 140px;
+    left: -140px;
+    border: 0px;
+    border-bottom: 2px solid black;
+  }
+  .javierInputFinal6 {
+    position: relative;
+    font-size: 18px;
+    width: 30px;
+    top: 97px;
+    left: 180px;
+  }
+  .javierInputFinal7 {
+    position: relative;
+    font-size: 15px;
+    top: 85px;
+    width: 130px;
+    background-color: white;
+    left: 80px;
+  }
+  .contenedorFinal {
+    display: flex;
+    flex-direction: column;
+  }
+  .globoJavier {
+    background-image: url("./imgs/ejercicio/mano\ con\ tarjeta\ vacia.png");
+    position: static;
+    white-space: nowrap;
+    background-repeat: no-repeat;
+    background-size: contain;
+    bottom: 300px;
+    width: 300px;
+    height: 300px;
+  }
+  /* Todo esto es de javier */
+  .elenainputfinal1 {
+    position: relative;
+    width: 40px;
+    height: 30px;
+    font-size: 18px;
+    top: 73px;
+    left: -20px;
+    border: 0px;
+    border-bottom: 2px solid black;
+  }
+  .elenainputfinal2 {
+    position: relative;
+    width: 70px;
+    height: 30px;
+    font-size: 18px;
+    left: -10px;
+    top: 73px;
+    border: 0px;
+    border-bottom: 2px solid black;
+  }
+  /* Todo esto es de maria */
+  .mariaInputFinal1 {
+    position: relative;
+    width: 50px;
+    height: 30px;
+    font-size: 18px;
+    top: 73px;
+    left: 10px;
+    border: 0px;
+    border-bottom: 2px solid black;
+  }
+  .mariaInputFinal2 {
+    position: relative;
+    width: 70px;
+    height: 30px;
+    font-size: 18px;
+    left: 10px;
+    top: 73px;
+    border: 0px;
+    border-bottom: 2px solid black;
+  }
+  .mariaInputFinal3 {
+    position: relative;
+    width: 70px;
+    height: 30px;
+    font-size: 18px;
+    top: 105px;
+    left: -100px;
+    border: 0px;
+    border-bottom: 2px solid black;
+  }
+  .mariaInputFinal4 {
+    position: relative;
+    width: 40px;
+    height: 30px;
+    font-size: 18px;
+    left: 105px;
+    top: 90px;
+  }
+  .mariaInputFinal5 {
+    position: relative;
+    width: 70px;
+    height: 30px;
+    font-size: 18px;
+    top: 38px;
+    left: 70px;
+    border: 0px;
+    border-bottom: 2px solid black;
+  }
+  .mariaInputFinal6 {
+    position: relative;
+    font-size: 20px;
+    width: 140px;
+    top: 20px;
+    left: 90px;
+    background-color: white;
+  }
+
+  .globoMaria {
+    background-image: url("./imgs/ejercicio/mano\ con\ tarjeta\ vacia.png");
+    position: static;
+    white-space: nowrap;
+    background-repeat: no-repeat;
+    background-size: contain;
+    bottom: -300px;
+    width: 300px;
+    height: 300px;
+    margin-bottom: -45px;
+  }
+  /* Todo lo de aqui es de maria */
+  .personaje {
+    width: 100px;
+    height: auto;
+  }
+  .imagenTarjetas {
+    width: 300px;
+    height: auto;
+  }
+  .personajeElena {
+    width: 150px;
+    height: auto;
+  }
+  .personajeMaria {
+    width: 100px;
+    height: auto;
+  }
+}
+
+.titleInstructions {
+  display: flex;
+  text-align: center;
+  font-family: "Mulish";
+  font-weight: normal;
+  align-items: center;
+}
+
+.iconlsmbutton {
+  background: none;
+  border: 0px;
+  flex-wrap: wrap;
+}
+.iconlsmbutton img {
+  background: none;
+  border: 0px;
+  flex-wrap: wrap;
+  padding-top: 5px;
+  width: 56px;
+  height: 56px;
+}
+.actividad {
+  display: flex;
+  justify-content: center;
+}
+.escena {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 0 30px;
+}
+
+.img_Act {
+  display: flex;
+  justify-content: center;
+}
+
+.item-letra {
+  margin: 0 5px;
+}
+.controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  gap: 20px;
+}
+.controlsCards {
+  border: 3px solid #2cb7b3;
+  /* X-offset, Y-offset, blur radius, color */
+  border-radius: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+  height: auto;
+}
+.controlsCards button {
+  height: fit-content;
+}
+
+.character {
+  justify-content: end;
+  width: 30px;
+  height: auto;
+  margin-left: auto;
+}
+
+.container {
+  width: 90%;
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.container span {
+  font-size: 1.5em;
+}
+
+.input {
+  text-align: center;
+  width: 80px;
+  margin: 5px;
+  border: none;
+  border-bottom: 2px solid #000;
+  background: none;
+  font-family: "Mulish";
+  font-size: 1.5em;
+}
+
+.vertical-container {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.vertical-container button {
+  text-align: center;
+  margin: 50px auto;
+  width: fit-content;
+}
+
+#game-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+button {
+  margin: 5px;
+  padding: 10px;
+  font-size: 1em;
+  cursor: pointer;
+  background-color: #efefef;
+  border: 1px solid #2cb7b3;
+  border-radius: 2em;
+  font-family: "Mulish";
+  font-weight: normal;
+}
+
+#letter-buttons,
+#spaces,
+#spaces1,
+#spaces2,
+#spaces3,
+#spaces4,
+#spaces5 {
+  display: flex;
+  flex-direction: row;
+  background: none;
+}
+
+.space {
+  width: 30px;
+  height: 30px;
+  border-bottom: 2px solid #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5px;
+  font-size: 1em;
+  font-size: larger;
+}
+
+.correct {
+  color: #2cb7b3;
+  pointer-events: none;
+}
+.incorrect {
+  color: red;
+}
+
+.resultados {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.modal {
+  display: none; /* Oculto por defecto */
+  position: fixed;
+  z-index: 2; /* Se coloca por encima de otros elementos */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro */
+}
+
+/* Contenido del modal */
+.modal-content {
+  background-color: white;
+  margin: 15% auto; /* Centrar en la pantalla */
+  padding: 20px;
+  border: 1px solid #888;
+  width: auto; /* Ancho del modal */
+  max-width: 560px; /* Máximo ancho */
+}
+.close {
+  color: #aaa;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+.menuButton {
+  display: flex;
+  align-items: center;
+}
+@font-face {
+  font-family: "Mulish";
+  src: url("./fuentes/Mulish/Mulish-VariableFont_wght.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
