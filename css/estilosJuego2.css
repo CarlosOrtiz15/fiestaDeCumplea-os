@@ -34,17 +34,18 @@
     justify-content: center;
 }
 .texto-rojo {
-    color: red;
+    color: black;
 }
 
 .image-container {
     height: auto;
+    flex-shrink: 0;
     justify-content: center;
     align-items: center;
     border: 1px solid #2cb7b3;
     border-top-right-radius: 17px;
     border-bottom-right-radius: 17px;
-    overflow: hidden;
+    display: block;
 }
 .image-wrapper {
     border-top: 1px solid #7ed0cb;
@@ -57,9 +58,8 @@
 
 /* Imagen de la invitación base */
 .imagenPrueba {
-    width: 60%; /* Ajusta al ancho de la imagen de la invitación */
-    height: auto;
-    display: block; /* Elimina espacios extra */
+    width: 100%; /* Ajusta al ancho de la imagen de la invitación */
+    max-height: 950px;
 }
 
 
@@ -79,7 +79,7 @@
     font-family: "Nunito", sans-serif;
     font-weight: 900;
     position: absolute;
-    top: 17%;
+    top: 12%;
     left: 50%;
     transform: translateX(-50%);
     font-size: 38px;
@@ -100,7 +100,7 @@
     font-size: 25px;
     color: white;
     position: absolute;
-    top: 31%;
+    top: 29%;
     left: 50%;
     transform: translateX(-50%);
     text-shadow: -2px -2px 0 black, 2px -2px 0 black, -2px 2px 0 black,
@@ -114,7 +114,7 @@
     font-size: 25px;
     color: white;
     position: absolute;
-    top: 47%;
+    top: 44%;
     left: 50%;
     transform: translateX(-50%);
     text-shadow: -2px -2px 0 black, 2px -2px 0 black, -2px 2px 0 black,
@@ -128,7 +128,7 @@
     font-size: 25px;
     color: white;
     position: absolute;
-    top: 62%;
+    top: 60%;
     left: 50%;
     transform: translateX(-50%);
     text-shadow: -2px -2px 0 black, 2px -2px 0 black, -2px 2px 0 black,
@@ -142,7 +142,7 @@
     font-size: 25px;
     color: white;
     position: absolute;
-    top: 91%;
+    top: 89%;
     left: 33%;
     transform: translateX(-65%);
     text-shadow: -2px -2px 0 black, 2px -2px 0 black, -2px 2px 0 black,
@@ -157,7 +157,7 @@
     line-height: 31px;
     color: #fefa9c;
     position: absolute;
-    top: 78%;
+    top: 76%;
     left: 50%;
     transform: translateX(-50%);
     text-shadow: -2px -2px 0 black, 2px -2px 0 black, -2px 2px 0 black,
@@ -176,7 +176,7 @@
     font-size: 25px;
     color: white;
     position: absolute;
-    top: 7%;
+    top: 5%;
     left: 32%;
     transform: translateX(-65%);
     text-shadow: -2px -2px 0 black, 2px -2px 0 black, -2px 2px 0 black,
@@ -193,10 +193,7 @@
 .aciertosErrores {
     font-family: "Nunito", sans-serif;
     font-weight: 900;
-    border-top: 1px solid #2cb7b3;
-}
-.acierto-contairner {
-    border-right: 1px solid #2cb7b3;
+    font-size: 10pt;
 }
 .opciones-container-deskopt {
     display: flex;
@@ -251,6 +248,9 @@
     left: 0;
     width: 100%;
     height: 100%;
+    pointer-events: auto;
+    background: transparent !important;
+     z-index: 1;
     /* Permitir clicks a través si no hay un elemento arrastrado por encima.
        Se debe manejar con JS en el onDrop para evitar que un click en un drop-space vacío dispare el clear si hay un elemento arrastrado sobre él.
        Para este juego, es mejor que cada drop-space maneje su propio pointer-events.
@@ -288,12 +288,12 @@
 }
 .drop-zone.correct {
     border: 3px solid green; /* Borde verde para correcto */
-    background-color: rgba(144, 238, 144, 0.5); /* Verde claro semitransparente */
 }
-.drop-zone.incorrect {
+/*.drop-zone.incorrect {
     border: 3px solid red;
-    background-color: rgba(255, 99, 71, 0.5); /* Rojo claro semitransparente */
+    background-color: rgba(255, 99, 71, 0.5); Rojo claro semitransparente 
 }
+*/
 .drop-zone.hover {
     background-color: lightblue;
     border: 2px dashed blue;
@@ -339,6 +339,18 @@
     border-radius: 15px;
     width: 40px;
     height: 40px;
+    pointer-events: none;    
+}
+.drop-content {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+  font-family: "Nunito", sans-serif;
+  font-size: 10pt;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 30%;
 }
 
 .drop-zone img.imgDropZone {
@@ -369,7 +381,7 @@
         border-radius: 15px;
     }
     .inv_t1 {
-        top: 16%;
+        top: 100%;
         width: 90%;
         font-size: 22px;
         line-height: 21px;
@@ -384,7 +396,7 @@
     }
     .inv_t2 {
         font-size: 21px;
-        top: 28%;
+        top: 27%;
     }
     .inv_t3 {
         font-size: 21px;
@@ -432,7 +444,7 @@
         border-radius: 17px;
     }
     .image-wrapper img {
-        width: 100%;
+        width: 200%;
         height: auto;
     }
 }

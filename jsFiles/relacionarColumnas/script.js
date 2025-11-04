@@ -91,8 +91,9 @@ function connectElements(start, end) {
     removeExistingConnection(end);
 
     // Verificar si la conexión es correcta
+    const imageIdentifier = "img"
     const isCorrect =
-      (start.id === end.alt || start.alt === end.id) &&
+      (start.id === end.id.slice(imageIdentifier.length) || start.id.slice(imageIdentifier.length) === end.id) &&
       !connections.some((conn) => conn.start === start && conn.end === end);
 
     // Agregar nueva conexión

@@ -37,11 +37,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const incorrectTextElement = document.getElementById('incorrect-text');
     const btnVerificar = document.getElementById('btn-verificar');
     const btnReintentar = document.getElementById('btn-reintentar');
-    const btnTerminar = document.getElementById('btn-terminar');
+    //const btnTerminar = document.getElementById('btn-terminar');
     const opcionesContainerDeskopt = document.getElementById('opciones-container-deskopt');
     const opcionesContainerMovil = document.getElementById('opciones-container-movil');
     const overlaySpacesContainer = document.getElementById('overlay-spaces-container');
-    const controlsSection = document.getElementById('controls-section');
 
     // --- Timer Functions ---
     const startTimer = () => {
@@ -72,6 +71,42 @@ document.addEventListener('DOMContentLoaded', () => {
         return state.dropZones.find(dropZone => dropZone.id === dropZoneId);
     };
 
+    const attachBoxListeners = (boxElement, box) => {
+    const canDrag = !box.isDropped;
+
+    boxElement.draggable = canDrag;
+    boxElement.setAttribute('draggable', canDrag ? 'true' : 'false');
+
+    const img = boxElement.querySelector('img');
+    if (img) {
+        img.setAttribute('draggable', 'false');
+        img.addEventListener('dragstart', (e) => e.preventDefault());
+    }
+
+    boxElement.addEventListener('dragstart', (e) => {
+        e.dataTransfer.effectAllowed = 'move';
+        e.dataTransfer.setData('text/plain', box.id);
+        state.selectedBox = box.id;
+        console.log('[dragstart]', box.id); 
+    });
+
+    boxElement.addEventListener('dragend', () => {
+        state.selectedBox = null;
+        renderBoxes();
+    });
+
+    boxElement.addEventListener('click', () => {
+        if (!box.isDropped) {
+        if (state.selectedBox && state.selectedBox !== box.id) {
+            const prev = document.getElementById(state.selectedBox);
+            if (prev) prev.classList.remove('selected');
+        }
+        state.selectedBox = box.id;
+        boxElement.classList.toggle('selected');
+        }
+    });
+    };
+
     // --- Render Functions ---
     const renderBoxes = () => {
         opcionesContainerDeskopt.innerHTML = '';
@@ -88,34 +123,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 boxElement.classList.add('selected');
             }
             boxElement.draggable = !box.isDropped;
-            boxElement.innerHTML = `<span>${box.content}</span><img class="imgBox" src="${box.imagePath}" alt="" draggable="false">`;
+            boxElement.innerHTML = `<span>${box.content}</span><img class="imgBox" src="${box.imagePath}" alt="" draggable="false">`;  
+            
+            
+            attachBoxListeners(boxElement, box);
+            const clone = boxElement.cloneNode(true);
+            attachBoxListeners(clone, box);
 
-            // Drag and Drop Events for draggable boxes
-            boxElement.addEventListener('dragstart', (e) => {
-                state.selectedBox = box.id;
-                e.dataTransfer.setData('text/plain', box.id);
-            });
-            boxElement.addEventListener('dragend', () => {
-                state.selectedBox = null;
-                renderBoxes(); // Re-render to remove 'selected' class
-            });
-            boxElement.addEventListener('click', () => {
-                // Allows selection for mobile drag-drop if not already dropped
-                if (!box.isDropped) {
-                     // Deselect previously selected box if any
-                    if (state.selectedBox && state.selectedBox !== box.id) {
-                        const prevSelectedBox = document.getElementById(state.selectedBox);
-                        if (prevSelectedBox) {
-                            prevSelectedBox.classList.remove('selected');
-                        }
-                    }
-                    state.selectedBox = box.id;
-                    boxElement.classList.toggle('selected');
-                }
-            });
-
-            opcionesContainerDeskopt.appendChild(boxElement.cloneNode(true)); // Clone for desktop
-            opcionesContainerMovil.appendChild(boxElement); // Use original for mobile (or clone if preferred)
+            opcionesContainerMovil.appendChild(boxElement);
+            opcionesContainerDeskopt.appendChild(clone);
         });
     };
 
@@ -147,11 +163,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 dropZoneElement.classList.add('hover');
             }
 
-            // Add content if dropped
+
             if (dropZone.isDropped) {
-                // If content is text, display span. If it's an image, display img.
                 if (dropZone.imagePath) {
-                    dropZoneElement.innerHTML = `<img class="imgDropZone" src="${dropZone.imagePath}" alt="">`;
+                      dropZoneElement.innerHTML = `
+                        <div class="drop-content">
+                        <span>${dropZone.content}</span>
+                        <img class="imgDropZone" src="${dropZone.imagePath}" alt="">
+                        </div>`;
                 } else {
                     dropZoneElement.innerHTML = `<span>${dropZone.content}</span>`;
                 }
@@ -161,7 +180,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
 
-            // Drag and Drop Events for drop zones
             dropZoneElement.addEventListener('dragover', (e) => {
                 e.preventDefault(); // Necessary to allow dropping
                 if (!dropZone.isDropped) {
@@ -207,18 +225,18 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         if (state.showResults) {
-            btnVerificar.style.display = 'none';
+            btnVerificar.style.display = 'block';
             if (state.condition) {
                 btnReintentar.style.display = 'none';
-                btnTerminar.style.display = 'block';
+                //btnTerminar.style.display = 'block';
             } else {
                 btnReintentar.style.display = 'block';
-                btnTerminar.style.display = 'none';
+                //btnTerminar.style.display = 'none';
             }
         } else {
             btnVerificar.style.display = 'block';
             btnReintentar.style.display = 'none';
-            btnTerminar.style.display = 'none';
+            //btnTerminar.style.display = 'none';
         }
     };
 
@@ -312,33 +330,6 @@ document.addEventListener('DOMContentLoaded', () => {
         window.location.href = '/'; // Change this to your correct root URL
     };
 
-    const resetGame = () => {
-        state.boxes.forEach(box => {
-            box.isDropped = false;
-        });
-
-        state.dropZones.forEach(dropZone => {
-            dropZone.isDropped = false;
-            dropZone.isCheck = false;
-            dropZone.isCorrect = null;
-            dropZone.draggedBoxId = null;
-            dropZone.content = '';
-            dropZone.imagePath = '';
-            dropZone.isHovered = false;
-        });
-
-        state.correctCount = 0;
-        state.incorrectCount = 0;
-        state.minutes = 0;
-        state.seconds = 0;
-        state.showResults = false;
-        state.condition = false;
-        state.selectedBox = null;
-
-        startTimer();
-        renderGame(); // Initial render after reset
-    };
-
     // const saveResults = () => {
     //     // Implement AJAX call here if you need to save results to a backend
     //     // Example using fetch:
@@ -370,8 +361,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- Event Listeners for Buttons ---
     btnVerificar.addEventListener('click', checkAnswers);
-    btnReintentar.addEventListener('click', resetGame);
-    btnTerminar.addEventListener('click', redirectToRoot);
+    //btnTerminar.addEventListener('click', redirectToRoot);
 
     // --- Initial Game Setup ---
     startTimer();

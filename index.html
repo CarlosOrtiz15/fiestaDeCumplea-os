@@ -89,7 +89,7 @@
                 </div>
                 <div class="card-body" style="position: relative;">
                   <button class="menuButton" data-index="3" style="position: absolute; width: 100%; height: 100%; opacity: 0; cursor: pointer; border: none; background: transparent;"></button>
-                  <img src="./imgs/ejercicio/portada1.png" alt="Tres personas se presentan, sus nombres son: María, Javier y Elena" style="width: 100%;">
+                  <img src="./imgs/ejercicio/portada1.png" alt="Imagen redireccionable" style="width: 100%;">
                 </div>
               </div>
 <!------------------------------------------->
@@ -289,16 +289,16 @@
           <div class="relacionar">
             <canvas id="gameCanvas"></canvas>
             <div id="left-column" class="columnaRelacion">
-                <img src="./imgs/ejercicio/j1/pastel.png" alt="Cumpleaños" class="character" draggable="true" />
-                <img src="./imgs/ejercicio/j1/casa.png" alt="Casa" class="character" draggable="true" />
-                <img src="./imgs/ejercicio/j1/sofia.png" alt="Sofia" class="character" draggable="true" />
+                <img src="./imgs/ejercicio/j1/pastel.png" alt="Pastel de compleaños" id="imgPastel" class="character" draggable="true" />
+                <img src="./imgs/ejercicio/j1/casa.png" alt="Hogar de color rosa" id="imgCasaRosa" class="character" draggable="true" />
+                <img src="./imgs/ejercicio/j1/sofia.png" alt="Niña con playera rosa y pelo color cabello cafe peinado en 2 colitas" id="imgSofia" class="character" draggable="true" />
               </div>
             
               <!-- Enunciados a la derecha -->
               <div id="right-column" class="columnaRelacion">
                 <span id="Sofia" draggable="true" class="relacionarTexto">Sofia</span>
-                <span id="Cumpleaños" draggable="true" class="relacionarTexto">Cumpleaños</span>
-                <span id="Casa" draggable="true" class="relacionarTexto">Casa</span>
+                <span id="Pastel" draggable="true" class="relacionarTexto">Pastel</span>
+                <span id="CasaRosa" draggable="true" class="relacionarTexto">Casa</span>
               </div>
           </div>
         </div>
@@ -326,23 +326,16 @@
     <p>Observa la invitación y pon las palabras donde corresponda.</p>
   </div>
 
-<div class="container col-md-12 col-12 pb-4">
-
+<div class="container col-md-12 col-12 pb-4 ">
   <div class="row">
-
-          <div id="opciones-container-deskopt" class="opciones-container-deskopt py-5">
-              </div>
+      <div id="opciones-container-deskopt" class="opciones-container-deskopt py-5 col-4 col-md-4">
       </div>
-
-      <div class="image-container col-md-8 col-10 mx-auto ">
-
-        
-
+  </div>
+      <div class="image-container col-md-8 col-10 ">
           <div id="opciones-container-movil" class="opciones-container-movil py-2">
-              </div>
-
+          </div>
           <div class="row image-wrapper">
-              <div class="col-md-12 col-12 ">
+              <div class="col-md-12 col-12">
                   <div class="d-flex flex-column justify-content-center">
                       <img src="imgs/ejercicio/j2/bg_invitacion.jpg" alt="invitación" draggable="false" class="imagenPrueba">
                   </div>
@@ -351,7 +344,7 @@
                       <p>Para:</p>
                   </div>
                   <div class="inv_t1">
-                      <p class="t1">¡Te invito a mi fiesta <br>de <span class="t1e">cumpleaños!</span></p>
+                      <p class="t1">¡Te invito a mi fiesta de <span class="t1e">cumpleaños!</span></p>
                   </div>
                   <div class="inv_t2">
                       <p>Lugar:</p>
@@ -370,31 +363,29 @@
                   </div>
 
                   <div id="overlay-spaces-container">
-                      </div>
-              </div>
-          </div>
-
-          <div id="controls-section">
-              <div class="row btn_container py-2">
-                  <div class=" col-12 d-flex flex-column justify-content-center">
-                      <div id="btn-verificar" class="btn-verificar mx-auto col-md-3 col-7">Verificar respuestas</div>
-                      <div id="btn-reintentar" class="btn-reintentar mx-auto col-md-3 col-7" style="display: none;">Reintentar</div>
-                      <div id="btn-terminar" class="btn-terminar mx-auto col-md-3 col-7" style="display: none;">Terminar lección</div>
                   </div>
               </div>
-
-              <div class="row aciertosErrores py-1">
-                  <div class="acierto-contairner col-6 col-md-6 h-100 d-flex flex-column justify-content-center ">
+          </div>
+</div>
+            </div>
+              <div class="row titleInstructions">
+              <button class="iconlsmbutton verificar" id="modalverificarRespuestas">
+                <img
+                  src="./imgs/manitas.png"
+                  alt="Icono clickeable para traducción a lengua de señas mexicana"/>
+              </button>
+              <button id="btn-verificar">Verificar respuestas</button>
+              <div class="row titleInstructions">
+                <div class="aciertosErrores py-1">
+                  <div class="acierto-container col-6 col-md-6 h-100 d-flex flex-column justify-content-center ">
                       <p class="text-center my-auto ">Aciertos: <span id="correct-count">0</span></p>
                   </div>
-                  <div class="errores-container col-6 col-md-6 h-100 d-flex flex-column justify-content-center">
+                  <div class="acierto-container col-6 col-md-6 h-100 d-flex flex-column justify-content-center">
                       <p class="text-center my-auto "><span id="incorrect-text">Errores: </span><span id="incorrect-count">0</span></p>
                   </div>
+                </div>
               </div>
-          </div>
-
-      </div>
-  </div>
+            </div>
 </div>
 </div>
       

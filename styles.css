@@ -30,6 +30,7 @@ iframe {
   align-items: center;
   height: 80px;
   width: fit-content;
+  margin-bottom: 20px;
 }
 .imagenTarjetas {
   width: 500px;
