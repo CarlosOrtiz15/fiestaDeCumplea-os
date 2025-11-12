@@ -32,8 +32,14 @@ window.onload = function () {
     modalSiguiente: `https://www.youtube.com/embed/WHciLN4oqZk?si=ouUWc4obec4CltLn`,
     modalfiestadecumpleaños: "https://www.youtube.com/embed/uYYH2l-e9g8?si=AfeUNjG55b0bi970",
     modalcualconcual: "https://www.youtube.com/embed/HryACyFC81k?si=AIDFBEKKhTtWmZQM",
-    modalRelacionalaimagenconlapalabra: "https://www.youtube.com/embed/_VTmeZbN0QQ?si=Z2cKGQh1isbImDlM"
-
+    modalRelacionalaimagenconlapalabra: "https://youtube.com/embed/_VTmeZbN0QQ",
+    modalCompletaLaInvitacion: "https://youtube.com/embed/BgxHb2Gp8RY",
+    modalCambiaLaInvitacion: "https://youtube.com/embed/_vAjL3Bz9iE",
+    modalMiraYResponde: "https://youtube.com/embed/d6LLtJSpuoA",
+    modalEscribeLaHora: "https://youtube.com/embed/0y7GcLnJKEs",
+    modalCambiaUnoPorOtro: "https://youtube.com/embed/m6h_lpxWK9c",
+    modalColocaEnSuLugar: "https://youtube.com/embed/8BtEa9Zl-KE ",
+    modalEscribeTuInvitacion: "https://youtube.com/embed/q67z38Wpf6U"
   };
   // Al hacer clic en el botón, mostrar el modal
   buttons.forEach((button) => {

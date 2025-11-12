@@ -39,7 +39,6 @@
 
 .image-container {
     height: auto;
-    flex-shrink: 0;
     justify-content: center;
     align-items: center;
     border: 1px solid #2cb7b3;

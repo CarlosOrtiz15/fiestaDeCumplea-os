@@ -1,9 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     const state = {
         nombre_juego: 'Juego#2',
-        timeStr: '',
-        timer_total: 0,
-        time_total_str: '',
         intentos: 0,
         condition: false, // true when all answers are correct
         showResults: false,
