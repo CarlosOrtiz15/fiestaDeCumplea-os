@@ -1,0 +1,92 @@
+.inputCI1 input{
+    border: 2px solid black;
+    border-radius: 30px;
+    padding: 8px 12px;
+    width: 300px;
+    font-size: 16px;
+    position: absolute;
+    top: 8%;
+    left: 37%;
+}
+
+.inputCI2 input{
+    border: 2px solid black;
+    border-radius: 30px;
+    padding: 8px 12px;
+    width: 300px;
+    font-size: 16px;
+    position: absolute;
+    top: 38%;
+    left: 30%;
+}
+
+.inputCI3 input{
+    border: 2px solid black;
+    border-radius: 30px;
+    padding: 8px 12px;
+    width: 200px;
+    font-size: 16px;
+    position: absolute;
+    top: 51%;
+    left: 55%;
+}
+
+.inputCI4 input{
+    border: 2px solid black;
+    border-radius: 30px;
+    padding: 8px 12px;
+    width: 300px;
+    font-size: 16px;
+    position: absolute;
+    top: 70%;
+    left: 30%;
+}
+
+.inputCI5 input{
+    border: 2px solid black;
+    border-radius: 30px;
+    padding: 8px 12px;
+    width: 300px;
+    font-size: 16px;
+    position: absolute;
+    top: 92%;
+    left: 38%;
+}
+.inputCI6 input{
+    border: 2px solid black;
+    border-radius: 30px;
+    padding: 8px 12px;
+    width: 145px;
+    font-size: 16px;
+    position: absolute;
+    top: 51%;
+    left: 28%;
+}
+.inv_t8 {
+    text-align: center;
+    font-weight: bold;
+    font-family: "Nunito", sans-serif;
+    font-weight: 900;
+    font-size: 25px;
+    color: white;
+    position: absolute;
+    top: 48%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-shadow: -2px -2px 0 black, 2px -2px 0 black, -2px 2px 0 black,
+        2px 2px 0 black;
+}
+.inv_t9 {
+    text-align: center;
+    font-weight: bold;
+    font-family: "Nunito", sans-serif;
+    font-weight: 900;
+    font-size: 25px;
+    color: white;
+    position: absolute;
+    top: 48%;
+    left: 22%;
+    transform: translateX(-50%);
+    text-shadow: -2px -2px 0 black, 2px -2px 0 black, -2px 2px 0 black,
+        2px 2px 0 black;
+}

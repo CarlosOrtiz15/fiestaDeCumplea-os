@@ -37,30 +37,34 @@
     color: black;
 }
 
-.image-container {
-    height: auto;
-    flex-shrink: 0;
+.contenedor {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+}
+.tabla{
+    display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px solid #2cb7b3;
+}
+.image-container {
+    height: auto;
+    justify-content: center;
+    align-items: center;
     border-top-right-radius: 17px;
     border-bottom-right-radius: 17px;
     display: block;
 }
 .image-wrapper {
-    border-top: 1px solid #7ed0cb;
     position: relative; /* FUNDAMENTAL para posicionar los drop-zones */
-    min-height: 400px; /* Asegura que tenga una altura mínima */
     display: flex; /* Permite centrar la imagen base */
     justify-content: center; /* Centra la imagen base */
     align-items: center; /* Centra la imagen base */
 }
 
 /* Imagen de la invitación base */
-.imagenPrueba {
-    width: 100%; /* Ajusta al ancho de la imagen de la invitación */
-    max-height: 950px;
-}
+
 
 
 .box-container {
@@ -182,7 +186,20 @@
     text-shadow: -2px -2px 0 black, 2px -2px 0 black, -2px 2px 0 black,
         2px 2px 0 black;
 }
-
+.inv_t8 {
+    text-align: center;
+    font-weight: bold;
+    font-family: "Nunito", sans-serif;
+    font-weight: 900;
+    font-size: 25px;
+    color: white;
+    position: absolute;
+    top: 44%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-shadow: -2px -2px 0 black, 2px -2px 0 black, -2px 2px 0 black,
+        2px 2px 0 black;
+}
 
 .timer-container {
     font-family: "Nunito", sans-serif;
@@ -444,7 +461,7 @@
         border-radius: 17px;
     }
     .image-wrapper img {
-        width: 200%;
+        width: auto;
         height: auto;
     }
 }
