@@ -21,12 +21,9 @@ document.addEventListener('DOMContentLoaded', () => {
             { id: 'box5-cl', content: 'Independencia #10', isDropped: false},
             { id: 'box6-cl', content: 'Fecha:', isDropped: false},
             { id: 'box7-cl', content: 'Para:', isDropped: false},
-            { id: 'box8-cl', content: '¡Te invito a mi fiesta', isDropped: false},
             { id: 'box9-cl', content: 'Lugar:', isDropped: false},
             { id: 'box10-cl', content: 'Hora:', isDropped: false},
             { id: 'box11-cl', content: 'De:', isDropped: false},
-            { id: 'box13-cl', content: 'de cumpleaños!', isDropped: false},
-            { id: 'box12-cl', content: '¡No faltes <br> te espero!', isDropped: false}
             
 
         ],

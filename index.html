@@ -373,13 +373,13 @@
 
     <div class="section" id="section5">
       <div class="titleInstructions">
-        <button class="iconlsmbutton" id="modalYoSoy">
+        <button class="iconlsmbutton" id="">
           <img src="./imgs/manitas.png" alt="Icono clickeable para traducción a lengua de señas mexicana" />
         </button>
         <h1>Cambia la invitación</h1>
       </div>
       <div class="titleInstructions">
-        <button class="iconlsmbutton" id="modalObservaYPracticaYoSoyParaPresentarte">
+        <button class="iconlsmbutton" id="">
           <img src="./imgs/manitas.png" alt="Icono clickeable para traducción a lengua de señas mexicana" />
         </button>
         <p>La fiesta de cumpleaños de Sofía ya no será en su casa, <br>será en la escuela a las 11:00 a.m. el 13 de
@@ -388,11 +388,11 @@
       <div class="contenedor">
         <div class="tabla">
           <div class="opciones-container-deskopt py-5 col-4 col-md-4">
-            <div id="box6" class="box">
+            <div id="box1-ci" class="box">
               <span>11:00</span>
               <img class="imgBox" src="imgs/reloj_11.png" alt="Reloj marcando las 11.">
             </div>
-            <div id="box7" class="box">
+            <div id="box2-ci" class="box">
               <span>13 de septiembre</span>
               <img class="imgBox" src="imgs/septiembre.png" alt="Calendario de septiembre">
             </div>
@@ -408,7 +408,7 @@
               <p>Para:</p>
             </div>
             <div class="inputCI1">
-              <input type="text" value="Luis" readonly>
+              <input type="text" class="inputText" value="Luis" readonly>
             </div>
             <div class="inv_t1">
               <p class="t1">¡Te invito a mi fiesta de <span class="t1e">cumpleaños!</span></p>
@@ -417,25 +417,25 @@
               <p>Lugar:</p>
             </div>
             <div class="inputCI2">
-              <input type="text" value="La escuela" readonly>
+              <input type="text" value="La escuela" class="inputText" readonly>
             </div>
             <div class="inv_t9">
               <p>Fecha:</p>
             </div>
             <div class="inputCI3">
-              <input type="text">
+              <input type="text" id="inputDia-ci">
             </div>
             <div class="inv_t8">
               <p>de:</p>
             </div>
             <div class="inputCI6">
-              <input type="text">
+              <input type="text" id="inputMes-ci">
             </div>
             <div class="inv_t4">
               <p>Hora:</p>
             </div>
             <div class="inputCI4">
-              <input type="text">
+              <input type="text" id="inputHora-ci">
             </div>
             <div class="inv_t6">
               <p>¡No faltes, <br><span class="t6e">Te espero!</span></p>
@@ -444,7 +444,7 @@
               <p>De:</p>
             </div>
             <div class="inputCI5">
-              <input type="text" value="Sofia" readonly>
+              <input type="text" value="Sofia" class="inputText" readonly>
             </div>
           </div>
         </div>
@@ -453,16 +453,16 @@
         <button class="iconlsmbutton verificar" id="modalverificarRespuestas">
           <img src="./imgs/manitas.png" alt="Icono clickeable para traducción a lengua de señas mexicana" />
         </button>
-        <button id="btn-verificar-2">Verificar respuestas</button>
+        <button id="btn-verificar-ci">Verificar respuestas</button>
       </div>
 
       <div class="row titleInstructions">
         <div class="aciertosErrores py-1">
           <div class="acierto-container col-6 col-md-6 h-100 d-flex flex-column justify-content-center ">
-            <p class="text-center my-auto ">Aciertos: <span id="">0</span></p>
+            <p class="text-center my-auto ">Aciertos: <span id="correct-count-ci">0</span></p>
           </div>
           <div class="acierto-container col-6 col-md-6 h-100 d-flex flex-column justify-content-center">
-            <p class="text-center my-auto "><span id="">Errores: </span><span id="">0</span></p>
+            <p class="text-center my-auto "><span id="incorrect-text-ci">Errores: </span><span id="incorrect-count-ci">0</span></p>
           </div>
         </div>
       </div>
@@ -1076,6 +1076,7 @@
 
   <script src="./jsFiles/juego2/game.js"></script>
   <script src="./jsFiles/juego7/juego7.js"></script>
+  <script src="./jsFiles/juego3/juego3.js"></script>
 
 
   <script src="./jsFiles/carouselCode/carousel.js"></script>

@@ -1,3 +1,12 @@
+
+.inputText {
+    font-family: "Nunito", sans-serif;
+    font-size: 25px !important;
+    font-weight: 1000;
+    color: rgb(69, 123, 167);
+    text-align: center;
+}
+
 .inputCI1 input{
     border: 2px solid black;
     border-radius: 30px;
