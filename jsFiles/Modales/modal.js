@@ -23,17 +23,23 @@ window.onload = function () {
   //   console.log(buttons);
   //   console.log("CARGARON");
 
-  var modalesExistentes = {
-    modalverificarRespuestas: `https://www.youtube.com/embed/PMZdq8qryPY?si=667Sy6NGvO72eoPF`,
-    modalLoHicisteBien: `https://www.youtube.com/embed/GEIR6rdUNUM?si=0o9SiLrXfnYwT2Ir`,
-    modalAciertos: `https://www.youtube.com/embed/3wBzN_NTDto?si=YKwPcxb7BJ13IjU-`,
-    modalErrores: `https://www.youtube.com/embed/OUSj2zRb_EE?si=8clQQSZxKd1etYq_`,
-    modalRegresar: `https://www.youtube.com/embed/pV3O0vJA_84?si=DYpgJJZQIbpGbotV`,
-    modalSiguiente: `https://www.youtube.com/embed/WHciLN4oqZk?si=ouUWc4obec4CltLn`,
+var modalesExistentes = {
+    modalverificarRespuestas: "https://www.youtube.com/embed/PMZdq8qryPY?si=667Sy6NGvO72eoPF",
+    modalLoHicisteBien: "https://www.youtube.com/embed/GEIR6rdUNUM?si=0o9SiLrXfnYwT2Ir",
+    modalAciertos: "https://www.youtube.com/embed/3wBzN_NTDto?si=YKwPcxb7BJ13IjU-",
+    modalErrores: "https://www.youtube.com/embed/OUSj2zRb_EE?si=8clQQSZxKd1etYq_",
+    modalRegresar: "https://www.youtube.com/embed/pV3O0vJA_84?si=DYpgJJZQIbpGbotV",
+    modalSiguiente: "https://www.youtube.com/embed/WHciLN4oqZk?si=ouUWc4obec4CltLn",
     modalfiestadecumpleaños: "https://www.youtube.com/embed/uYYH2l-e9g8?si=AfeUNjG55b0bi970",
     modalcualconcual: "https://www.youtube.com/embed/HryACyFC81k?si=AIDFBEKKhTtWmZQM",
-    modalRelacionalaimagenconlapalabra: "https://www.youtube.com/embed/_VTmeZbN0QQ?si=Z2cKGQh1isbImDlM"
-
+    modalRelacionalaimagenconlapalabra: "https://www.youtube.com/embed/_VTmeZbN0QQ?si=Z2cKGQh1isbImDlM",
+    modalCompletaLaInvitacion: "https://www.youtube.com/embed/BgxHb2Gp8RY ",
+    modalObservaLaInvitacionYColocaDondeCorresponda: "https://www.youtube.com/embed/BgxHb2Gp8RY ",
+    modalCambiaLaInvitacion: "https://www.youtube.com/embed/_vAjL3Bz9iE ",
+    modalLafiestaYaNoSeraEnSuCasa: "https://www.youtube.com/embed/nuo6SwC1lRY ",
+    modalMiraYResponde: "https://www.youtube.com/embed/d6LLtJSpuoA",
+    modalASofiaLeLlegoUnaNuevaInvitacion: "https://wwww.youtube.com/embed/tI1aIw6T3DI",
+    modalEscribeLaHora: "https://www.youtube.com/embed/0y7GcLnJKEs"
   };
   // Al hacer clic en el botón, mostrar el modal
   buttons.forEach((button) => {

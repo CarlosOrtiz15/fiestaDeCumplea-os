@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="./styles.css" />
   <link rel="stylesheet" href="css/estilosJuego2.css">
   <link rel="stylesheet" href="css/estilosJuego3.css">
+  <link rel="stylesheet" href="css/estilosJuego4.css">
   <script src="./jsFiles/Modales/modal.js"></script>
   <title>Fiesta de cumpleaños</title>
 </head>
@@ -387,7 +388,7 @@
       </div>
       <div class="contenedor">
         <div class="tabla">
-          <div class="opciones-container-deskopt py-5 col-4 col-md-4">
+          <!-- <div class="opciones-container-deskopt py-5 col-4 col-md-4">
             <div id="box1-ci" class="box">
               <span>11:00</span>
               <img class="imgBox" src="imgs/reloj_11.png" alt="Reloj marcando las 11.">
@@ -396,7 +397,7 @@
               <span>13 de septiembre</span>
               <img class="imgBox" src="imgs/septiembre.png" alt="Calendario de septiembre">
             </div>
-          </div>
+          </div> -->
         </div>
         <div class="row image-wrapper ">
           <div class="col-12">
@@ -423,13 +424,13 @@
               <p>Fecha:</p>
             </div>
             <div class="inputCI3">
-              <input type="text" id="inputDia-ci">
+              <input type="text" id="inputMes-ci">
             </div>
             <div class="inv_t8">
               <p>de:</p>
             </div>
             <div class="inputCI6">
-              <input type="text" id="inputMes-ci">
+              <input type="text" id="inputDia-ci">
             </div>
             <div class="inv_t4">
               <p>Hora:</p>
@@ -470,60 +471,62 @@
     <!----------------------------------------------------------------------------------------->
     <div class="section" id="section6">
       <div class="titleInstructions">
-        <button class="iconlsmbutton" id="modalYoSoy">
+        <button class="iconlsmbutton" id="modalMiraYResponde">
           <img src="./imgs/manitas.png" alt="Icono clickeable para traducción a lengua de señas mexicana" />
         </button>
-        <h1>Yo soy...</h1>
+        <h1>Mira y responde</h1>
       </div>
       <div class="titleInstructions">
-        <button class="iconlsmbutton" id="modalObservaYPracticaYoSoyParaPresentarte">
+        <button class="iconlsmbutton" id="modalASofiaLeLlegoUnaNuevaInvitacion">
           <img src="./imgs/manitas.png" alt="Icono clickeable para traducción a lengua de señas mexicana" />
         </button>
-        <p>Observa y practica la forma “yo soy...” para presentarte.</p>
+        <p>A sofía le llegó una nueva invitación ayúdala a leerla.
+          Responde Sí o No a las siguientes preguntas. </p>
       </div>
-      <div class="scene">
-        <div class="vertical-container">
-          <div class="container">
-            <span>Yo </span>
-            <input type="text" id="input1" class="input" />
-            <span> Teresa</span>
-            <img src="./imgs/ejercicio/Imagen20.png" alt="Teresa" class="character" />
+      <div class="contenedor">
+        <div class="row image-wrapper">
+          <div class="col-5">
+            <img src="./imgs//ejercicio/j4/ejercicio4.png" draggable="false" alt="imagen de una invitación">
           </div>
-          <div class="container">
-            <span>Yo soy </span>
-            <input type="text" id="input2" class="input" />
-            <img src="./imgs/ejercicio/Imagen21.png" alt="Niño" class="character" />
+          <div class="justify-content-end col-md-5">
+            <div>
+              <p class="textPreguntas">¿La fiesta es una boda?</p>
+              <button class="buttonSioNo" id="pregunta1Si">Sí</button>
+              <Button class="buttonSioNo" id="pregunta1No">No</Button>
+            </div>
+            <div>
+              <p class="textPreguntas">¿La fiesta son 15 años?</p>
+              <button class="buttonSioNo" id="pregunta2Si">Sí</button>
+              <Button class="buttonSioNo" id="pregunta2No">No</Button>
+            </div>
+            <div>
+              <p class="textPreguntas">¿La fiesta en en la escuela?</p>
+              <button class="buttonSioNo" id="pregunta3Si">Sí</button>
+              <Button class="buttonSioNo" id="pregunta3No">No</Button>
+            </div>
+            <div>
+              <p class="textPreguntas">¿La fiesta es a las 5:00p.m.?</p>
+              <button class="buttonSioNo" id="pregunta4Si">Sí</button>
+              <Button class="buttonSioNo" id="pregunta4No">No</Button>
+            </div>
           </div>
-          <div class="container">
-            <input type="text" id="input3" class="input" />
-            <span> soy Pablo</span>
-            <img src="./imgs/ejercicio/Pablo.png" alt="Pablo" class="character" />
+        </div>
+      </div>
+      <div class="row titleInstructions">
+        <button class="iconlsmbutton verificar" id="modalverificarRespuestas">
+          <img src="./imgs/manitas.png" alt="Icono clickeable para traducción a lengua de señas mexicana" />
+        </button>
+        <button id="btn-verificar-4">Verificar respuestas</button>
+      </div>
+
+      <div class="row titleInstructions">
+        <div class="aciertosErrores py-1">
+          <div class="acierto-container col-6 col-md-6 h-100 d-flex flex-column justify-content-center ">
+            <p class="text-center my-auto ">Aciertos: <span id="AciertosJ4">0</span></p>
           </div>
-          <div class="container">
-            <span>Yo soy </span>
-            <input type="text" id="input4" class="input" />
-            <img src="./imgs/ejercicio/Imagen23.png" alt="Niño" class="character" />
+          <div class="acierto-container col-6 col-md-6 h-100 d-flex flex-column justify-content-center">
+            <p class="text-center my-auto "><span id="">Errores: </span><span id="ErroresJ4">0</span></p>
           </div>
-          <div class="container">
-            <input type="text" id="input5" class="input" />
-            <span> soy Elena</span>
-            <img src="./imgs/ejercicio/Elena.png" alt="Pablo" class="character" />
-          </div>
-          <div class="container">
-            <span>Yo </span>
-            <input type="text" id="input6" class="input" />
-            <span> Carlos</span>
-            <img src="./imgs/ejercicio/Carlos.png" alt="Teresa" class="character" />
-          </div>
-          <div class="titleInstructions">
-            <button class="iconlsmbutton verificar" id="modalverificarRespuestas">
-              <img src="./imgs/manitas.png" alt="Icono clickeable para traducción a lengua de señas mexicana" />
-            </button>
-            <button onclick="verificarRespuestas()">
-              Verificar respuestas
-            </button>
-          </div>
-          <div id="resultadoSec3" class="resultados"></div>
         </div>
       </div>
     </div>
@@ -1047,8 +1050,6 @@
     </div>
 
   </div>
-
-
   </div>
   </div>
 
@@ -1075,8 +1076,11 @@
   <script src="./jsFiles/TarjetasPresentacion/script.js"></script>
 
   <script src="./jsFiles/juego2/game.js"></script>
-  <script src="./jsFiles/juego7/juego7.js"></script>
   <script src="./jsFiles/juego3/juego3.js"></script>
+  <script src="./jsFiles/juego4/juego4.js"></script>
+
+  <script src="./jsFiles/juego7/juego7.js"></script>
+  
 
 
   <script src="./jsFiles/carouselCode/carousel.js"></script>
