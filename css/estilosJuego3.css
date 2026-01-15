@@ -99,3 +99,8 @@
     text-shadow: -2px -2px 0 black, 2px -2px 0 black, -2px 2px 0 black,
         2px 2px 0 black;
 }
+.correct {
+  background-color: #c8f7c5; /* verde suave */
+  border: 2px solid #2ecc71;
+  color: #145a32;
+}
