@@ -30,16 +30,22 @@ var modalesExistentes = {
     modalErrores: "https://www.youtube.com/embed/OUSj2zRb_EE?si=8clQQSZxKd1etYq_",
     modalRegresar: "https://www.youtube.com/embed/pV3O0vJA_84?si=DYpgJJZQIbpGbotV",
     modalSiguiente: "https://www.youtube.com/embed/WHciLN4oqZk?si=ouUWc4obec4CltLn",
-    modalfiestadecumpleaños: "https://www.youtube.com/embed/uYYH2l-e9g8?si=AfeUNjG55b0bi970",
-    modalcualconcual: "https://www.youtube.com/embed/HryACyFC81k?si=AIDFBEKKhTtWmZQM",
-    modalRelacionalaimagenconlapalabra: "https://www.youtube.com/embed/_VTmeZbN0QQ?si=Z2cKGQh1isbImDlM",
+    modalFiestaDeCumpleaños: "https://www.youtube.com/embed/uYYH2l-e9g8?si=AfeUNjG55b0bi970",
+    modalCualConCual: "https://www.youtube.com/embed/HryACyFC81k?si=AIDFBEKKhTtWmZQM",
+    modalRelacionaLaImagenConLaPalabra: "https://www.youtube.com/embed/_VTmeZbN0QQ?si=Z2cKGQh1isbImDlM",
     modalCompletaLaInvitacion: "https://www.youtube.com/embed/BgxHb2Gp8RY ",
-    modalObservaLaInvitacionYColocaDondeCorresponda: "https://www.youtube.com/embed/BgxHb2Gp8RY ",
+    modalObservaLaInvitacionYColocaDondeCorresponda: "https://www.youtube.com/embed/b8I8sfhdL9s",
     modalCambiaLaInvitacion: "https://www.youtube.com/embed/_vAjL3Bz9iE ",
-    modalLafiestaYaNoSeraEnSuCasa: "https://www.youtube.com/embed/nuo6SwC1lRY ",
+    modalLaFiestaYaNoSeraEnSuCasa: "https://www.youtube.com/embed/nuo6SwC1lRY ",
     modalMiraYResponde: "https://www.youtube.com/embed/d6LLtJSpuoA",
-    modalASofiaLeLlegoUnaNuevaInvitacion: "https://wwww.youtube.com/embed/tI1aIw6T3DI",
-    modalEscribeLaHora: "https://www.youtube.com/embed/0y7GcLnJKEs"
+    modalASofiaLeLlegoUnaNuevaInvitacion: "https://www.youtube.com/embed/tI1aIw6T3DI",
+    modalEscribeLaHora: "https://www.youtube.com/embed/0y7GcLnJKEs",
+    modalBravo: "https://www.youtube.com/embed/GEIR6rdUNUM",
+    modalCambiaUnoPorOtro: "https://www.youtube.com/embed/m6h_lpxWK9c",
+    modalColocaEnSuLugar: "https://www.youtube.com/embed/fBeXzmSOjUI",
+    modalEscribeTuInvitacion: "https://www.youtube.com/embed/q67z38Wpf6U",
+    modalElGenioAColocadoSinQuerer: "https://www.youtube.com/embed/8BtEa9Zl-KE",
+    modalEscribeTuPropiaInvitacion: "https://www.youtube.com/embed/FiTsmIdfNnU"
   };
   // Al hacer clic en el botón, mostrar el modal
   buttons.forEach((button) => {

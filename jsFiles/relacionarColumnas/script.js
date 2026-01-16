@@ -2,7 +2,13 @@
 let connections = []; // Guardará las conexiones existentes
 let draggingElement = null;
 let selectedElement = null;
+function abrirModalConVideo(url) {
+      const modal = document.getElementById("emergente");
+      const iframe = document.querySelector("#emergente iframe");
 
+      iframe.src = url;
+      modal.style.display = "block";
+}
 document.addEventListener("DOMContentLoaded", function () {
   const leftColumn = document.getElementById("left-column");
   const elements = Array.from(leftColumn.children);
@@ -102,11 +108,13 @@ function connectElements(start, end) {
       end,
       color: isCorrect ? "green" : "red",
     });
-
     // Bloquear elementos si la conexión es correcta
     if (isCorrect) lockElements(start, end);
-
     drawConnections();
+    const correctAnswers = connections.filter(c => c.color === "green").length;
+    if (correctAnswers === 3) {
+      abrirModalConVideo("https://www.youtube.com/embed/GEIR6rdUNUM");
+    }
   }
 }
 

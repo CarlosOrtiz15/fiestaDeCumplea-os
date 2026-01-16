@@ -42,7 +42,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
         ]
     };
+    function abrirModalConVideo(url) {
+        const modal = document.getElementById("emergente");
+        const iframe = document.querySelector("#emergente iframe");
 
+        iframe.src = url;
+        modal.style.display = "block";
+    }
     // --- DOM Elements ---
     const correctCountElement = document.getElementById('correct-count-cl');
     const incorrectCountElement = document.getElementById('incorrect-count-cl');
@@ -302,7 +308,10 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
             state.condition = false;
         }
-
+        if (state.correctCount === 10) {
+            abrirModalConVideo("https://www.youtube.com/embed/GEIR6rdUNUM");
+        }
+        document.querySelectorAll(".aciertosErroresCL").forEach(el => el.style.display = "block");
         renderGame(); // Re-render to show results
         // saveResults(); // If you implement backend saving
     };
@@ -348,4 +357,5 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- Initial Game Setup ---
     renderGame(); // Initial render of all elements
+    
 });

@@ -10,6 +10,13 @@ document.addEventListener("DOMContentLoaded", () => {
   const RPregunta3No = document.getElementById("pregunta3No");
   const RPregunta4Si = document.getElementById("pregunta4Si");
   const RPregunta4No = document.getElementById("pregunta4No");
+  function abrirModalConVideo(url) {
+      const modal = document.getElementById("emergente");
+      const iframe = document.querySelector("#emergente iframe");
+
+      iframe.src = url;
+      modal.style.display = "block";
+  }
 
   const respuestasCorrectas = {
     pregunta1: false,
@@ -93,5 +100,9 @@ document.addEventListener("DOMContentLoaded", () => {
     // Mostrar resultados
     correct_count.textContent = aciertos;
     incorrect_count.textContent = errores;
+    if(aciertos === 4) {
+      abrirModalConVideo("https://www.youtube.com/embed/GEIR6rdUNUM");
+    }
+    document.querySelectorAll(".aciertosErroresMR").forEach(el => el.style.display = "block");
   });
 });
