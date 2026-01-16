@@ -7,6 +7,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const inputMonth = document.getElementById('inputMes-ci');
     const inputHour = document.getElementById('inputHora-ci');
     const inputDay = document.getElementById('inputDia-ci');
+    function abrirModalConVideo(url) {
+        const modal = document.getElementById("emergente");
+        const iframe = document.querySelector("#emergente iframe");
+
+        iframe.src = url;
+        modal.style.display = "block";
+    }
 
     const checkAnswers = () => {
         let correctCount = 0;
@@ -42,9 +49,12 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
             incorrectCount++;
         }
-
+        if (correctCount === 3) {
+            abrirModalConVideo("https://www.youtube.com/embed/GEIR6rdUNUM");
+        }
         correctCountElement.innerText = correctCount;
         incorrectCountElement.innerText = incorrectCount;
+        document.querySelectorAll(".aciertosErroresCOI").forEach(el => el.style.display = "block");
     };
 
     btnVerificar.addEventListener('click', checkAnswers);

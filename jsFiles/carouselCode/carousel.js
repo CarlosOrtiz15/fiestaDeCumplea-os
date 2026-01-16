@@ -81,23 +81,24 @@ document.addEventListener("DOMContentLoaded", () => {
     controls.style.display = "none";
   }
 
-  dots.forEach((dot, index) => {
+  dots.forEach((dot) => {
     dot.addEventListener("click", () => {
-      currentIndex = index;
+      const targetIndex = Number(dot.dataset.index);
+      currentIndex = targetIndex;
       showSection(currentIndex);
     });
   });
 
-  menuButtons.forEach((button, index) => {
+
+  menuButtons.forEach((button) => {
     button.addEventListener("click", () => {
-      currentIndex = index;
+      const targetIndex = Number(button.dataset.index); // lee data-index="X"
+      currentIndex = targetIndex;
       showSection(currentIndex);
-      window.scrollTo({
-        top: 0,
-        behavior: "auto" // También puedes probar "smooth"
-      });
+      window.scrollTo({ top: 0, behavior: "auto" });
     });
   });
+
 
   menuBtn.addEventListener("click", menuSection);
   nextBtn.addEventListener("click", nextSection);

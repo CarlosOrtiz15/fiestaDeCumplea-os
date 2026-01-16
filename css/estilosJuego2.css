@@ -207,10 +207,11 @@
     font-size: 15pt;
     color: #2cb7b3;
 }
-.aciertosErrores {
+.aciertosErroresCI {
     font-family: "Nunito", sans-serif;
     font-weight: 900;
     font-size: 10pt;
+    display: none;
 }
 .opciones-container-deskopt {
     display: flex;

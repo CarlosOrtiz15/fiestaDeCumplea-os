@@ -29,7 +29,13 @@ document.addEventListener('DOMContentLoaded', () => {
             { id: 'dropZone10', content: '', imagePath: '', isDropped: false, isCheck: false, isCorrect: null, draggedBoxId: null, top: 6, left: 36, height: '8%', width: '39%', correctAnswer: 'box3', isHovered: false }
         ]
     };
+    function abrirModalConVideo(url) {
+        const modal = document.getElementById("emergente");
+        const iframe = document.querySelector("#emergente iframe");
 
+        iframe.src = url;
+        modal.style.display = "block";
+    }
     // --- DOM Elements ---
     const timerElement = document.getElementById('timer');
     const correctCountElement = document.getElementById('correct-count');
@@ -311,6 +317,10 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
             state.condition = false;
         }
+        if (state.correctCount === 5) {
+            abrirModalConVideo("https://www.youtube.com/embed/GEIR6rdUNUM");
+        }
+        document.querySelectorAll(".aciertosErroresCI").forEach(el => el.style.display = "block");
 
         stopTimer();
         calculateTotalTimeStrings(); // Update time strings for display/saving
@@ -366,4 +376,5 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- Initial Game Setup ---
     startTimer();
     renderGame(); // Initial render of all elements
+    
 });

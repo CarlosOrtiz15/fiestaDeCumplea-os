@@ -1,0 +1,16 @@
+.btnjuego6 {
+margin-top: 50px;
+font-family: Arial, Helvetica, sans-serif;
+font-size: 25px;
+}
+
+.globotxt {
+    position: absolute;
+    bottom: 51%;
+    right: 11%;
+}
+.globoimg {
+    position: absolute;
+    bottom: 39%;
+    right: 49%;
+}
