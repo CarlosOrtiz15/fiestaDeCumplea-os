@@ -1,11 +1,11 @@
 document.addEventListener('DOMContentLoaded', () => {    
 
-    const correctCountElement = document.getElementById('AciertosJ5');
-    const incorrectCountElement = document.getElementById('ErroresJ5');
+    const correctCountElement = document.getElementById('AciertosJ5_3');
+    const incorrectCountElement = document.getElementById('ErroresJ5_3');
 
-    const btnVerificar = document.getElementById('btn-verificar-5');
-    const input1 = document.getElementById('inputEH1');
-    const btnmuyBien = document.getElementById('btn-muyBienEH')
+    const btnVerificar = document.getElementById('btn-verificar-5_3');
+    const input1 = document.getElementById('inputEH3');
+    const btnmuyBien = document.getElementById('btn-muyBienEH3');
     function abrirModalConVideo(url) {
         const modal = document.getElementById("emergente");
         const iframe = document.querySelector("#emergente iframe");
@@ -35,12 +35,12 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         if (correctCount === 1) {
-            //abrirModalConVideo("https://www.youtube.com/embed/GEIR6rdUNUM");
-            btnmuyBien.style.display = "block"
+           // abrirModalConVideo("https://www.youtube.com/embed/GEIR6rdUNUM");
+           btnmuyBien.style.display = "block"
         }
         correctCountElement.innerText = correctCount;
         incorrectCountElement.innerText = incorrectCount;
-        document.querySelectorAll(".aciertosErroresEH").forEach(el => el.style.display = "block");
+        document.querySelectorAll(".aciertosErroresEH_3").forEach(el => el.style.display = "block");
     };
 
     btnVerificar.addEventListener('click', checkAnswers);

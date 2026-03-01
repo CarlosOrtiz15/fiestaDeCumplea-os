@@ -55,6 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const incorrectTextElement = document.getElementById('incorrect-text-cl');
     const btnVerificar = document.getElementById('btn-verificar-cl');
     const btnReintentar = document.getElementById('btn-reintentar');
+    const btnmuyBien = document.getElementById('btn-muyBienCL');
     //const btnTerminar = document.getElementById('btn-terminar');
     const opcionesContainerDeskopt = document.getElementById('opciones-container-deskopt-cl');
     const opcionesContainerMovil = document.getElementById('opciones-container-movil-cl');
@@ -309,7 +310,8 @@ document.addEventListener('DOMContentLoaded', () => {
             state.condition = false;
         }
         if (state.correctCount === 10) {
-            abrirModalConVideo("https://www.youtube.com/embed/GEIR6rdUNUM");
+            //abrirModalConVideo("https://www.youtube.com/embed/GEIR6rdUNUM");
+            btnmuyBien.style.display = "block"
         }
         document.querySelectorAll(".aciertosErroresCL").forEach(el => el.style.display = "block");
         renderGame(); // Re-render to show results

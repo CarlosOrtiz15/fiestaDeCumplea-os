@@ -45,7 +45,17 @@ var modalesExistentes = {
     modalColocaEnSuLugar: "https://www.youtube.com/embed/fBeXzmSOjUI",
     modalEscribeTuInvitacion: "https://www.youtube.com/embed/q67z38Wpf6U",
     modalElGenioAColocadoSinQuerer: "https://www.youtube.com/embed/8BtEa9Zl-KE",
-    modalEscribeTuPropiaInvitacion: "https://www.youtube.com/embed/FiTsmIdfNnU"
+    modalEscribeTuPropiaInvitacion: "https://www.youtube.com/embed/FiTsmIdfNnU",
+    modalEscribeLaHoraInstruccion: "https://www.youtube.com/embed/7wcMfu8hPx0 ",
+    modalDondeEsLaBoda: "https://www.youtube.com/embed/kw2X0uW1xXg",
+    modalAyudaAlGenioOtraVez: "https://www.youtube.com/embed/rNWuBsSjj2I",
+    modalDondeEsLaFiestaDeCumpleaños: "https://www.youtube.com/embed/ZadDR1516rI",
+    modalAyudaAlGenioUnaUltimaVez:"https://www.youtube.com/embed/dHIQHELTvY4",
+    modalDondeEsLaFiestaDe15Años: "https://www.youtube.com/embed/rNANHioWe8E",
+    modalMuyBien: "https://www.youtube.com/embed/GEIR6rdUNUM",
+    modalLaFiestaDeCumpleañosEsALas: "https://www.youtube.com/embed/_FwbMMeZ4T8 ",
+    modalLaBodaEsALas: "https://www.youtube.com/embed/8J9gHz1z46E",
+    modalLaFiestaDe15EsALas: "https://www.youtube.com/embed/qy5sroRESSM "
   };
   // Al hacer clic en el botón, mostrar el modal
   buttons.forEach((button) => {

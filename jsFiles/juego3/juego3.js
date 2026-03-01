@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const inputMonth = document.getElementById('inputMes-ci');
     const inputHour = document.getElementById('inputHora-ci');
     const inputDay = document.getElementById('inputDia-ci');
+    const btnmuyBien = document.getElementById('btn-muyBienCI');
     function abrirModalConVideo(url) {
         const modal = document.getElementById("emergente");
         const iframe = document.querySelector("#emergente iframe");
@@ -50,7 +51,8 @@ document.addEventListener('DOMContentLoaded', () => {
             incorrectCount++;
         }
         if (correctCount === 3) {
-            abrirModalConVideo("https://www.youtube.com/embed/GEIR6rdUNUM");
+            //abrirModalConVideo("https://www.youtube.com/embed/GEIR6rdUNUM");
+            btnmuyBien.style.display = "block";
         }
         correctCountElement.innerText = correctCount;
         incorrectCountElement.innerText = incorrectCount;
