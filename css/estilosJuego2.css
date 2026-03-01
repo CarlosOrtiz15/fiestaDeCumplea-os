@@ -306,6 +306,7 @@
 }
 .drop-zone.correct {
     border: 3px solid green; /* Borde verde para correcto */
+    background-color: rgb(70, 230, 137);
 }
 /*.drop-zone.incorrect {
     border: 3px solid red;

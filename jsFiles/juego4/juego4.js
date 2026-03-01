@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const RPregunta3No = document.getElementById("pregunta3No");
   const RPregunta4Si = document.getElementById("pregunta4Si");
   const RPregunta4No = document.getElementById("pregunta4No");
+  const btnmuyBien = document.getElementById("btn-muyBienMI")
   function abrirModalConVideo(url) {
       const modal = document.getElementById("emergente");
       const iframe = document.querySelector("#emergente iframe");
@@ -87,22 +88,21 @@ document.addEventListener("DOMContentLoaded", () => {
       // Comparar respuestas
       if (usuario === correcta) {
         aciertos++;
-        btn.style.backgroundColor = "green";
-        btn.style.color = "white";
+        btn.style.backgroundColor = "rgb(70, 230, 137)";
 
       } else {
         errores++;
-        btn.style.backgroundColor = "red";
-        btn.style.color = "white";
+        btn.style.backgroundColor = "rgb(238, 105, 90)";
       }
     }
 
     // Mostrar resultados
     correct_count.textContent = aciertos;
     incorrect_count.textContent = errores;
-    if(aciertos === 4) {
-      abrirModalConVideo("https://www.youtube.com/embed/GEIR6rdUNUM");
-    }
+     if(aciertos === 4) {
+      //abrirModalConVideo("https://www.youtube.com/embed/GEIR6rdUNUM");
+      btnmuyBien.style.display ="block"
+     }
     document.querySelectorAll(".aciertosErroresMR").forEach(el => el.style.display = "block");
   });
 });

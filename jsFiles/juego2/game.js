@@ -43,6 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const incorrectTextElement = document.getElementById('incorrect-text');
     const btnVerificar = document.getElementById('btn-verificar');
     const btnReintentar = document.getElementById('btn-reintentar');
+    const btnmuyBien = document.getElementById('btn-muyBienCOI');
     //const btnTerminar = document.getElementById('btn-terminar');
     const opcionesContainerDeskopt = document.getElementById('opciones-container-deskopt');
     const opcionesContainerMovil = document.getElementById('opciones-container-movil');
@@ -307,19 +308,21 @@ document.addEventListener('DOMContentLoaded', () => {
                 state.correctCount++;
             } else {
                 state.incorrectCount++;
-            }
+            } 
         });
 
         state.showResults = true;
 
-        if (state.correctCount === state.dropZones.length) { // Check if all are correct
+         /*if (state.correctCount === state.dropZones.length) { // Check if all are correct
             state.condition = true;
         } else {
             state.condition = false;
-        }
+        } */
         if (state.correctCount === 5) {
-            abrirModalConVideo("https://www.youtube.com/embed/GEIR6rdUNUM");
+           // abrirModalConVideo("https://www.youtube.com/embed/GEIR6rdUNUM");
+             btnmuyBien.style.display = "block";
         }
+
         document.querySelectorAll(".aciertosErroresCI").forEach(el => el.style.display = "block");
 
         stopTimer();
@@ -374,7 +377,7 @@ document.addEventListener('DOMContentLoaded', () => {
     //btnTerminar.addEventListener('click', redirectToRoot);
 
     // --- Initial Game Setup ---
-    startTimer();
+    //startTimer();
     renderGame(); // Initial render of all elements
     
 });
