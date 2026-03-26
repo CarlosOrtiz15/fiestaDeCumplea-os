@@ -10,7 +10,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const RPregunta3No = document.getElementById("pregunta3No");
   const RPregunta4Si = document.getElementById("pregunta4Si");
   const RPregunta4No = document.getElementById("pregunta4No");
-  const btnmuyBien = document.getElementById("btn-muyBienMI")
+  const btnmuyBien = document.getElementById("btn-muyBienMI");
+  const btnnonoCuidado = document.getElementById("btn-nonoCuidadoMI");
   function abrirModalConVideo(url) {
       const modal = document.getElementById("emergente");
       const iframe = document.querySelector("#emergente iframe");
@@ -102,6 +103,11 @@ document.addEventListener("DOMContentLoaded", () => {
      if(aciertos === 4) {
       //abrirModalConVideo("https://www.youtube.com/embed/GEIR6rdUNUM");
       btnmuyBien.style.display ="block"
+     }
+     if (errores === 0) {
+      btnnonoCuidado.style.display = "none"
+     } else {
+      btnnonoCuidado.style.display = "block"
      }
     document.querySelectorAll(".aciertosErroresMR").forEach(el => el.style.display = "block");
   });

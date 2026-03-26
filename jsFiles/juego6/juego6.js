@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const btnVerificar = document.getElementById("btn-verificar-juego6");
     const respuestaU = document.getElementById("respuestaJuego6");
     const btnmuyBien = document.getElementById('btn-muyBienCO');
+    const btnnonoCuidado = document.getElementById('btn-nonoCuidadoCO')
     const respuestaCorrecta = "la playa";
     
     respuestaU.addEventListener("input", () => {
@@ -25,8 +26,10 @@ document.addEventListener("DOMContentLoaded", () => {
             respuestaU.style.backgroundColor = "rgb(70, 230, 137)";
             //abrirModalConVideo("https://www.youtube.com/embed/GEIR6rdUNUM");
             btnmuyBien.style.display = "block"
+            btnnonoCuidado.style.display = "none"
         } else {
             respuestaU.style.backgroundColor = "rgb(238, 105, 90)";
+            btnnonoCuidado.style.display = "block"
         }
     });
 });

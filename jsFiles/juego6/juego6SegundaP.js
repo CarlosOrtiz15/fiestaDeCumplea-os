@@ -11,6 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const btnVerificar = document.getElementById("btn-verificar-juego6-2");
     const respuestaU = document.getElementById("respuestaJuego6-2");
     const btnmuyBien = document.getElementById('btn-muyBienCO2');
+    const btnnonoCuidado = document.getElementById('btn-nonoCuidadoCO2')
     const respuestasCorrectas = ["salon de fiestas", "salón de fiestas"];
 
     respuestaU.addEventListener("input", () => {
@@ -24,8 +25,10 @@ document.addEventListener("DOMContentLoaded", () => {
             respuestaU.style.backgroundColor = "rgb(70, 230, 137)"
             //abrirModalConVideo("https://www.youtube.com/embed/GEIR6rdUNUM");
             btnmuyBien.style.display = "block"
+            btnnonoCuidado.style.display = "none"
         } else {
             respuestaU.style.backgroundColor = "rgb(238, 105, 90)"
+            btnnonoCuidado.style.display = "block"
         }
     });
 });

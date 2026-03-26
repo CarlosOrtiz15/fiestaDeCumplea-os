@@ -294,6 +294,11 @@
     background-color: rgba(255, 255, 255, 0.4); /* Semitransparente para ver la invitación de fondo */
     transition: background-color 0.3s, border-color 0.3s;
 }
+
+/*.drop-zone:focus-visible {
+    outline: 3px solid blue;
+}*/
+
 .drop-zone.initial {
     background-color: rgba(255, 255, 255, 0.4); /* Mismo que el predeterminado */
     color: black;
@@ -308,11 +313,11 @@
     border: 3px solid green; /* Borde verde para correcto */
     background-color: rgb(70, 230, 137);
 }
-/*.drop-zone.incorrect {
+.drop-zone.incorrect {
     border: 3px solid red;
-    background-color: rgba(255, 99, 71, 0.5); Rojo claro semitransparente 
+    background-color: rgb(238, 105, 90); 
 }
-*/
+
 .drop-zone.hover {
     background-color: lightblue;
     border: 2px dashed blue;
