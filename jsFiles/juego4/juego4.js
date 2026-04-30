@@ -66,6 +66,8 @@ document.addEventListener("DOMContentLoaded", () => {
         b.style.border = "";
       });
         btn.style.border = "3px solid blue";
+        btn.style.color = "#212121";
+        btn.style.backgroundColor = "#666"
       console.log("Click en:", id, "→", pregunta, respuesta);
     });
   });
@@ -94,6 +96,7 @@ document.addEventListener("DOMContentLoaded", () => {
       } else {
         errores++;
         btn.style.backgroundColor = "rgb(238, 105, 90)";
+        btn.disabled = true
       }
     }
 
