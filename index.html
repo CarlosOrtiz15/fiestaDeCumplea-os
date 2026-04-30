@@ -218,6 +218,7 @@
         </div>
       </div>
     </div>
+    <!-------------------------------------Secciones de juegos--------------------------->
     <div class="section" id="section2"></div>
     <div class="section" id="section3">
       <div class="titleInstructions">
@@ -237,21 +238,27 @@
           <canvas id="gameCanvas"></canvas>
           <div id="left-column" class="columnaRelacion">
             <img src="./imgs/ejercicio/j1/pastel.png" alt="Pastel de compleaños" id="imgPastel" class="character"
-              draggable="true" />
+              draggable="true" tabindex="0" />
             <img src="./imgs/ejercicio/j1/casa.png" alt="Hogar de color rosa" id="imgCasaRosa" class="character"
-              draggable="true" />
+              draggable="true" tabindex="0"/>
             <img src="./imgs/ejercicio/j1/sofia.png"
               alt="Niña con playera rosa y pelo color cabello cafe peinado en 2 colitas" id="imgSofia" class="character"
-              draggable="true" />
+              draggable="true" tabindex="0"/>
           </div>
 
           <!-- Enunciados a la derecha -->
           <div id="right-column" class="columnaRelacion">
-            <span id="Sofia" draggable="true" class="relacionarTexto">Sofia</span>
-            <span id="Pastel" draggable="true" class="relacionarTexto">Cumpleaños</span>
-            <span id="CasaRosa" draggable="true" class="relacionarTexto">Casa</span>
+            <span id="Sofia" draggable="true" class="relacionarTexto" tabindex="0">Sofia</span>
+            <span id="Pastel" draggable="true" class="relacionarTexto" tabindex="0">Cumpleaños</span>
+            <span id="CasaRosa" draggable="true" class="relacionarTexto" tabindex="0">Casa</span>
           </div>
         </div>
+      </div>
+      <div id="btn-muyBienCC" class="row titleInstructions" style="display: none;">
+        <button class="iconlsmbutton verificar" id="modalMuyBien">
+          <img src="./imgs/manitas.png" alt="Icono clickeable para traducción a lengua de señas mexicana" />
+        </button>
+        <span>¡Muy bien!</span>
       </div>
     </div>
 
@@ -335,6 +342,11 @@
           <img src="./imgs/manitas.png" alt="Icono clickeable para traducción a lengua de señas mexicana" />
         </button>
       </div>
+      <div id="btn-nonoCuidadoCOI" class="row titleInstructions" style="display: none;">
+        <button class="iconlsmbutton verificar" id="modalNonoCuidado"> No no, cuidado
+          <img src="./imgs/manitas.png" alt="Icono clickeable para traducción a lengua de señas mexicana" />
+        </button>
+      </div>
     </div>
 
     <!------------------------------------------------------------------------------------------>
@@ -390,19 +402,19 @@
               <p>Fecha:</p>
             </div>
             <div class="inputCI3">
-              <input type="text" id="inputMes-ci">
+              <input type="text" class="inputText" id="inputMes-ci">
             </div>
             <div class="inv_t8">
-              <p>de:</p>
+              <p>de</p>
             </div>
             <div class="inputCI6">
-              <input type="text" id="inputDia-ci">
+              <input type="text" class="inputText" id="inputDia-ci">
             </div>
             <div class="inv_CI4">
               <p>Hora:</p>
             </div>
             <div class="inputCI4">
-              <input type="text" id="inputHora-ci">
+              <input type="text" class="inputText" id="inputHora-ci">
             </div>
             <div class="inv_CI6">
               <p>¡No faltes, <br><span class="t6e">Te espero!</span></p>
@@ -440,6 +452,12 @@
           <img src="./imgs/manitas.png" alt="Icono clickeable para traducción a lengua de señas mexicana" />
         </button>
         <span>¡Muy bien!</span>
+      </div>
+      <div id="btn-nonoCuidadoCI" class="row titleInstructions" style="display: none;">
+        <button class="iconlsmbutton verificar" id="modalNonoCuidado">
+          <img src="./imgs/manitas.png" alt="Icono clickeable para traducción a lengua de señas mexicana" />
+        </button>
+        <span>No no, cuidado</span>
       </div>
     </div>
     <!----------------------------------------------------------------------------------------->
@@ -507,9 +525,15 @@
         </button>
         <span>¡Muy bien!</span>
       </div>
+      <div id="btn-nonoCuidadoMI" class="row titleInstructions" style="display: none;">
+        <button class="iconlsmbutton verificar" id="modalNonoCuidado">
+          <img src="./imgs/manitas.png" alt="Icono clickeable para traducción a lengua de señas mexicana" />
+        </button>
+        <span>No no, cuidado</span>
+      </div>
     </div>
     <!----->
-    <!-- Completar nombres -->
+    <!-------------------------------------------------------->
     <div class="section" id="section7">
       <div class="titleInstructions">
         <button class="iconlsmbutton" id="modalEscribeLaHora">
@@ -522,7 +546,7 @@
           <img src="./imgs/manitas.png" alt="Icono clickeable para traducción a lengua de señas mexicana" />
         </button>
         <p>¿Recuerdas el video del genio cuando le presenta la hora a Sofía? <br>
-          Observa las invitaciones y escribe ¿a qué hora es la boda?</p>
+          Observa las invitaciones y escribe ¿a qué hora es la ...?</p>
       </div>
       <div class="contenedor-juego5">
         <div>
@@ -535,19 +559,22 @@
           <img src="imgs/ejercicio/j5/invitacion3EscribeLaHora.png" alt="" class="invitacion3">
         </div>
       </div>
-      <div class="pregunta">
-        <div>
-          <div class="titleInstructions invitacion2Txt">
+      <div>
+        <div class="contenedorj5">
+          <img class="" src="imgs/ejercicio/j5/ChatGPT Image 1 mar 2026, 13_38_28.png" alt="">
+          <div class="titleInstructions textoj5">
             <button class="iconlsmbutton" id="modalLaFiestaDeCumpleañosEsALas">
               <img src="./imgs/manitas.png" alt="Icono clickeable para traducción a lengua de señas mexicana" />
             </button>
-            <p>la fiesta de <br>cumpleaños es a las</p>
+            <p>La fiesta de <br>cumpleaños es a las</p>
+            <div>
+              <input type="text" class="input-linea2 inputj5"  id="inputEH1">
+            </div>
           </div>
-          <input type="text" class="input-linea2" id="inputEH1">
         </div>
       </div>
       <div>
-        <img src="imgs/ejercicio/j6/sofia.png" alt="" style="margin-top: 50px;">
+        <img src="imgs/ejercicio/j6/sofia.png" style="margin-top: 0px;">
       </div>
       <div class="row titleInstructions">
         <button class="iconlsmbutton verificar" id="modalverificarRespuestas">
@@ -571,8 +598,14 @@
         </button>
         <span>¡Muy bien!</span>
       </div>
+      <div id="btn-nonoCuidadoEH" class="row titleInstructions" style="display: none;">
+        <button class="iconlsmbutton verificar" id="modalNonoCuidado">
+          <img src="./imgs/manitas.png" alt="Icono clickeable para traducción a lengua de señas mexicana" />
+        </button>
+        <span>No no, cuidado</span>
+      </div>      
     </div>
-    <!------------------>
+    <!------------------------------------------->
     <div class="section" id="section8">
       <div class="titleInstructions">
         <button class="iconlsmbutton" id="modalEscribeLaHora">
@@ -585,28 +618,33 @@
           <img src="./imgs/manitas.png" alt="Icono clickeable para traducción a lengua de señas mexicana" />
         </button>
         <p>¿Recuerdas el video del genio cuando le presenta la hora a Sofía? <br>
-          Observa las invitaciones y escribe ¿a qué hora es la boda?</p>
+          Observa las invitaciones y escribe ¿a qué hora es la ...?</p>
       </div>
       <div class="contenedor-juego5">
         <div>
-          <img src="imgs/ejercicio/j5/invitacionEscribeLaHora.png" alt="" class="invitacion1">
+          <img src="imgs/ejercicio/j5/invitacion3EscribeLaHora.png" alt="" class="invitacion1">
         </div>
         <div>
-          <img src="imgs/ejercicio/j5/invitacion2EscribeLaHora.png" alt="" class="invitacion2">
+          <img  src="imgs/ejercicio/j5/invitacionEscribeLaHora.png" alt="" class="invitacion2">
         </div>
         <div>
-          <img src="imgs/ejercicio/j5/invitacion3EscribeLaHora.png" alt="" class="invitacion3">
+          <img src="imgs/ejercicio/j5/invitacion2EscribeLaHora.png" alt="" class="invitacion3">
         </div>
       </div>
       <div class="pregunta">
         <div>
-          <div class="titleInstructions invitacion1Txt">
-            <button class="iconlsmbutton" id="modalLaBodaEsALas">
-              <img src="./imgs/manitas.png" alt="Icono clickeable para traducción a lengua de señas mexicana" />
-            </button>
-            <p>la boda es a las</p>
+          <div class="contenedorj5">
+            <img class="" src="imgs/ejercicio/j5/ChatGPT Image 1 mar 2026, 13_38_28.png" alt="">
+            <div class="titleInstructions textoj5">
+              <button class="iconlsmbutton" id="modalLaBodaEsALas">
+                <img src="./imgs/manitas.png" alt="Icono clickeable para traducción a lengua de señas mexicana" />
+              </button>
+             <p>la boda es a las</p>
+             <div>
+                <input type="text" class="input-linea1 inputj5" id="inputEH2">
+             </div>
+            </div>
           </div>
-          <input type="text" class="input-linea1" id="inputEH2">
         </div>
       </div>
       <div>
@@ -635,8 +673,14 @@
         </button>
         <span>¡Muy bien!</span>
       </div>
+      <div id="btn-nonoCuidadoEH2" class="row titleInstructions" style="display: none;">
+        <button class="iconlsmbutton verificar" id="modalNonoCuidado">
+          <img src="./imgs/manitas.png" alt="Icono clickeable para traducción a lengua de señas mexicana" />
+        </button>
+        <span>No no, cuidado</span>
+      </div>
     </div>
-    <!---->
+    <!----------------------------------------------------->
     <div class="section" id="section9">
       <div class="titleInstructions">
         <button class="iconlsmbutton" id="modalEscribeLaHora">
@@ -649,28 +693,33 @@
           <img src="./imgs/manitas.png" alt="Icono clickeable para traducción a lengua de señas mexicana" />
         </button>
         <p>¿Recuerdas el video del genio cuando le presenta la hora a Sofía? <br>
-          Observa las invitaciones y escribe ¿a qué hora es la boda?</p>
+          Observa las invitaciones y escribe ¿a qué hora es la ...?</p>
       </div>
       <div class="contenedor-juego5">
         <div>
           <img src="imgs/ejercicio/j5/invitacionEscribeLaHora.png" alt="" class="invitacion1">
         </div>
         <div>
-          <img src="imgs/ejercicio/j5/invitacion2EscribeLaHora.png" alt="" class="invitacion2">
+          <img src="imgs/ejercicio/j5/invitacion3EscribeLaHora.png" alt="" class="invitacion2">
         </div>
         <div>
-          <img src="imgs/ejercicio/j5/invitacion3EscribeLaHora.png" alt="" class="invitacion3">
+          <img src="imgs/ejercicio/j5/invitacion2EscribeLaHora.png" alt="" class="invitacion3">
         </div>
       </div>
       <div class="pregunta">
         <div>
-          <div class="titleInstructions invitacion3Txt">
-            <button class="iconlsmbutton" id="modalLaFiestaDe15EsALas">
-              <img src="./imgs/manitas.png" alt="Icono clickeable para traducción a lengua de señas mexicana" />
-            </button>
-            <p>la fiesta de 15 <br>años es a las</p>
+          <div class="contenedorj5">
+            <img src="imgs/ejercicio/j5/ChatGPT Image 1 mar 2026, 13_38_28.png" alt="">
+            <div  class="titleInstructions textoj5">
+              <button class="iconlsmbutton" id="modalLaFiestaDe15EsALas">
+                <img src="./imgs/manitas.png" alt="Icono clickeable para traducción a lengua de señas mexicana" />
+              </button>
+              <p>la fiesta de 15 <br>años es a las</p>
+              <div>
+                <input type="text" class="input-linea3 inputj5" id="inputEH3">
+              </div>
+            </div>
           </div>
-          <input type="text" class="input-linea3" id="inputEH3">
         </div>
       </div>
       <div>
@@ -698,6 +747,12 @@
           <img src="./imgs/manitas.png" alt="Icono clickeable para traducción a lengua de señas mexicana" />
         </button>
         <span>¡Muy bien!</span>
+      </div>
+      <div id="btn-nonoCuidadoEH3" class="row titleInstructions" style="display: none;">
+        <button class="iconlsmbutton verificar" id="modalNonoCuidado">
+          <img src="./imgs/manitas.png" alt="Icono clickeable para traducción a lengua de señas mexicana" />
+        </button>
+        <span>No no, cuidado</span>
       </div>
     </div>
     <!----------------------------------->
@@ -731,11 +786,11 @@
           <button class="iconlsmbutton globoimg" id="modalDondeEsLaBoda">
             <img src="./imgs/manitas.png" alt="Icono clickeable para traducción a lengua de señas mexicana" />
           </button>
-          <span class="globotxt">¿Donde es la boda?</span>
+          <span class="globotxt">¿Dónde es la boda?</span>
         </div>
       </div>
       <div style="margin-top: 35px; margin-bottom: 35px;">
-        <span class="btnjuego6">La boda es en:</span>
+        <span class="btnjuego6">La boda es en</span>
         <input type="text" id="respuestaJuego6"
           style="width: 200px; padding-top: 7px; padding-bottom: 7px; font-size: x-large; text-align: center; background-color: none;">
       </div>
@@ -750,6 +805,12 @@
           <img src="./imgs/manitas.png" alt="Icono clickeable para traducción a lengua de señas mexicana" />
         </button>
         <span>¡Muy bien!</span>
+      </div>
+      <div id="btn-nonoCuidadoCO" class="row titleInstructions" style="display: none;">
+        <button class="iconlsmbutton verificar" id="modalNonoCuidado">
+          <img src="./imgs/manitas.png" alt="Icono clickeable para traducción a lengua de señas mexicana" />
+        </button>
+        <span>No no, cuidado</span>
       </div>
     </div>
     <!------------------------------------------->
@@ -784,7 +845,7 @@
         </div>
       </div>
       <div style="margin-top: 35px; margin-bottom: 35px;">
-        <span class="btnjuego6">La fiesta es en el:</span>
+        <span class="btnjuego6">La fiesta es en el</span>
         <input type="text" id="respuestaJuego6-2"
           style="width: 200px; padding-top: 7px; padding-bottom: 7px; font-size: x-large; text-align: center; background-color: none;">
       </div>
@@ -799,6 +860,12 @@
           <img src="./imgs/manitas.png" alt="Icono clickeable para traducción a lengua de señas mexicana" />
         </button>
         <span>¡Muy bien!</span>
+      </div>
+      <div id="btn-nonoCuidadoCO2" class="row titleInstructions" style="display: none;">
+        <button class="iconlsmbutton verificar" id="modalNonoCuidado">
+          <img src="./imgs/manitas.png" alt="Icono clickeable para traducción a lengua de señas mexicana" />
+        </button>
+        <span>No no, cuidado</span>
       </div>
     </div>
 
@@ -834,7 +901,7 @@
         </div>
       </div>
       <div style="margin-top: 35px; margin-bottom: 35px;">
-        <span class="btnjuego6">La fiesta es en:</span>
+        <span class="btnjuego6">La fiesta es en</span>
         <input type="text" id="respuestaJuego6-3"
           style="width: 200px; padding-top: 7px; padding-bottom: 7px; font-size: x-large; text-align: center; background-color: none;">
       </div>
@@ -849,6 +916,12 @@
           <img src="./imgs/manitas.png" alt="Icono clickeable para traducción a lengua de señas mexicana" />
         </button>
         <span>¡Muy bien!</span>
+      </div>
+      <div id="btn-nonoCuidadoCO3" class="row titleInstructions" style="display: none;">
+        <button class="iconlsmbutton verificar" id="modalNonoCuidado">
+          <img src="./imgs/manitas.png" alt="Icono clickeable para traducción a lengua de señas mexicana" />
+        </button>
+        <span>No no, cuidado</span>
       </div>
     </div>
     <!-- Coloca en su lugar -->
@@ -918,6 +991,12 @@
         </button>
         <span>¡Muy bien!</span>
       </div>
+      <div id="btn-nonoCuidadoCL" class="row titleInstructions" style="display: none;">
+        <button class="iconlsmbutton verificar" id="modalNonoCuidado">
+          <img src="./imgs/manitas.png" alt="Icono clickeable para traducción a lengua de señas mexicana" />
+        </button>
+        <span>No no, cuidado</span>
+      </div>
     </div>
 
     <!------------------------------------------------->
@@ -978,11 +1057,11 @@
           </div>
         </div>
       </div>
-      <div class="row titleInstructions">
+      <div class="row titleInstructions" style="z-index: 10;">
         <button class="iconlsmbutton verificar" id="modalverificarRespuestas">
           <img src="./imgs/manitas.png" alt="Icono clickeable para traducción a lengua de señas mexicana" />
         </button>
-        <button id="modalBravo">Verificar respuestas</button>
+        <button id="btn-verificar-EI">Verificar respuestas</button>
       </div>
       <div id="btn-muyBienEI" class="row titleInstructions" style="display: none;">
         <button class="iconlsmbutton verificar" id="modalMuyBien">
@@ -991,6 +1070,7 @@
         <span>¡Muy bien!</span>
       </div>
     </div>
+    <!--------------------------------------------->
     <div class="controls" id="controles">
       <div class="controlsCards">
         <button id="menuBtn" class="caroseli"></button>

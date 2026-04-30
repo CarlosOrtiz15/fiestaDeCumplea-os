@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const btnVerificar = document.getElementById('btn-verificar-5_2');
     const input1 = document.getElementById('inputEH2');
     const btnmuyBien = document.getElementById('btn-muyBienEH2');
+    const btnnonoCuidado = document.getElementById('btn-nonoCuidadoEH2')
     function abrirModalConVideo(url) {
         const modal = document.getElementById("emergente");
         const iframe = document.querySelector("#emergente iframe");
@@ -37,6 +38,11 @@ document.addEventListener('DOMContentLoaded', () => {
         if (correctCount === 1) {
             //abrirModalConVideo("https://www.youtube.com/embed/GEIR6rdUNUM");
             btnmuyBien.style.display = "block"
+        }
+        if (incorrectCount === 1) {
+            btnnonoCuidado.style.display = "block";
+        } else {
+            btnnonoCuidado.style.display = "none";
         }
         correctCountElement.innerText = correctCount;
         incorrectCountElement.innerText = incorrectCount;

@@ -5,7 +5,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const btnVerificar = document.getElementById('btn-verificar-5');
     const input1 = document.getElementById('inputEH1');
-    const btnmuyBien = document.getElementById('btn-muyBienEH')
+    const btnmuyBien = document.getElementById('btn-muyBienEH');
+    const btnnonoCuidado = document.getElementById('btn-nonoCuidadoEH')
     function abrirModalConVideo(url) {
         const modal = document.getElementById("emergente");
         const iframe = document.querySelector("#emergente iframe");
@@ -31,12 +32,17 @@ document.addEventListener('DOMContentLoaded', () => {
             input1.style.backgroundColor= "rgb(70, 230, 137)";
         } else {
             incorrectCount++;
-            input1.style.backgroundColor= "rgb(238, 105, 90)"
+            input1.style.backgroundColor= "rgb(238, 105, 90)";
         }
 
         if (correctCount === 1) {
             //abrirModalConVideo("https://www.youtube.com/embed/GEIR6rdUNUM");
-            btnmuyBien.style.display = "block"
+            btnmuyBien.style.display = "block";
+        }
+        if (incorrectCount === 1) {
+            btnnonoCuidado.style.display = "block";
+        } else {
+            btnnonoCuidado.style.display = "none";
         }
         correctCountElement.innerText = correctCount;
         incorrectCountElement.innerText = incorrectCount;

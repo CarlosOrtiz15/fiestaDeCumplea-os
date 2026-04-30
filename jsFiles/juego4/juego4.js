@@ -10,7 +10,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const RPregunta3No = document.getElementById("pregunta3No");
   const RPregunta4Si = document.getElementById("pregunta4Si");
   const RPregunta4No = document.getElementById("pregunta4No");
-  const btnmuyBien = document.getElementById("btn-muyBienMI")
+  const btnmuyBien = document.getElementById("btn-muyBienMI");
+  const btnnonoCuidado = document.getElementById("btn-nonoCuidadoMI");
   function abrirModalConVideo(url) {
       const modal = document.getElementById("emergente");
       const iframe = document.querySelector("#emergente iframe");
@@ -65,6 +66,8 @@ document.addEventListener("DOMContentLoaded", () => {
         b.style.border = "";
       });
         btn.style.border = "3px solid blue";
+        btn.style.color = "#212121";
+        btn.style.backgroundColor = "#666"
       console.log("Click en:", id, "→", pregunta, respuesta);
     });
   });
@@ -93,6 +96,7 @@ document.addEventListener("DOMContentLoaded", () => {
       } else {
         errores++;
         btn.style.backgroundColor = "rgb(238, 105, 90)";
+        btn.disabled = true
       }
     }
 
@@ -102,6 +106,11 @@ document.addEventListener("DOMContentLoaded", () => {
      if(aciertos === 4) {
       //abrirModalConVideo("https://www.youtube.com/embed/GEIR6rdUNUM");
       btnmuyBien.style.display ="block"
+     }
+     if (errores === 0) {
+      btnnonoCuidado.style.display = "none"
+     } else {
+      btnnonoCuidado.style.display = "block"
      }
     document.querySelectorAll(".aciertosErroresMR").forEach(el => el.style.display = "block");
   });

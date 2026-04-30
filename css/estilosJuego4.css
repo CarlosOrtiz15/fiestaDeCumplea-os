@@ -18,6 +18,12 @@
     font-size: 20px;
     color: black;
 }
+
+.buttonSioNo:focus {
+    outline: none;
+    border: 3px solid blue;
+}
+
 .aciertosErroresMR {
     font-family: "Nunito", sans-serif;
     font-weight: 900;

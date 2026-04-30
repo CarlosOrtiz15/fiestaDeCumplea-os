@@ -2,12 +2,9 @@
 let connections = []; // Guardará las conexiones existentes
 let draggingElement = null;
 let selectedElement = null;
-function abrirModalConVideo(url) {
-      const modal = document.getElementById("emergente");
-      const iframe = document.querySelector("#emergente iframe");
-
-      iframe.src = url;
-      modal.style.display = "block";
+function verbtnmuybien() {
+  const btnmuyBien = document.getElementById("btn-muyBienCC")
+    btnmuyBien.style.display = "block";
 }
 document.addEventListener("DOMContentLoaded", function () {
   const leftColumn = document.getElementById("left-column");
@@ -112,8 +109,9 @@ function connectElements(start, end) {
     if (isCorrect) lockElements(start, end);
     drawConnections();
     const correctAnswers = connections.filter(c => c.color === "green").length;
-    if (correctAnswers === 3) {
-      abrirModalConVideo("https://www.youtube.com/embed/GEIR6rdUNUM");
+    if (correctAnswers >= 3) {
+      console.log("Se debería mostrar el botón");
+      verbtnmuybien();
     }
   }
 }
@@ -153,6 +151,24 @@ document.addEventListener("drop", (e) => {
 
 // Selección y conexión mediante clic
 document.addEventListener("click", (e) => {
+  if (
+    (e.target.tagName === "SPAN" || e.target.tagName === "IMG") &&
+    !e.target.classList.contains("locked")
+  ) {
+    if (selectedElement) {
+      if (selectedElement !== e.target) {
+        connectElements(selectedElement, e.target);
+      }
+      selectedElement.classList.remove("selected");
+      selectedElement = null;
+    } else {
+      selectedElement = e.target;
+      selectedElement.classList.add("selected");
+    }
+  }
+});
+
+document.addEventListener("keypress", (e) => {
   if (
     (e.target.tagName === "SPAN" || e.target.tagName === "IMG") &&
     !e.target.classList.contains("locked")

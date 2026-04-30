@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const inputHour = document.getElementById('inputHora-ci');
     const inputDay = document.getElementById('inputDia-ci');
     const btnmuyBien = document.getElementById('btn-muyBienCI');
+    const btnnonoCuidado = document.getElementById('btn-nonoCuidadoCI')
     function abrirModalConVideo(url) {
         const modal = document.getElementById("emergente");
         const iframe = document.querySelector("#emergente iframe");
@@ -31,6 +32,8 @@ document.addEventListener('DOMContentLoaded', () => {
             inputDay.readOnly = true; // queda fijo
         } else {
             incorrectCount++;
+            inputDay.style.backgroundColor = "rgb(238, 105, 90)";
+            inputDay.style.color = "black";
         }
 
         // HORA
@@ -54,10 +57,29 @@ document.addEventListener('DOMContentLoaded', () => {
             //abrirModalConVideo("https://www.youtube.com/embed/GEIR6rdUNUM");
             btnmuyBien.style.display = "block";
         }
+        if (incorrectCount != 0) {
+            btnnonoCuidado.style.display = "block";
+        } else {
+            btnnonoCuidado.style.display = "none";
+        }
         correctCountElement.innerText = correctCount;
         incorrectCountElement.innerText = incorrectCount;
         document.querySelectorAll(".aciertosErroresCOI").forEach(el => el.style.display = "block");
     };
 
     btnVerificar.addEventListener('click', checkAnswers);
+    btnVerificar.addEventListener('keypress', checkAnswers);
+    
+    inputDay.addEventListener("input", () => {
+    inputDay.style.backgroundColor = ""; 
+    inputDay.style.color = "";
+    });
+    inputMonth.addEventListener("input", () => {
+    inputMonth.style.backgroundColor = "";
+    inputMonth.style.color = ""; 
+    });
+    inputHour.addEventListener("input", () => {
+    inputHour.style.backgroundColor = ""; 
+    inputHour.style.color = "";
+    });
 });

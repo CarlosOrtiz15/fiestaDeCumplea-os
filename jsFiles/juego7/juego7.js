@@ -29,16 +29,16 @@ document.addEventListener('DOMContentLoaded', () => {
         ],
         dropZones: [
             // top y left son porcentajes de la imagen de fondo
-            { id: 'dropZone6-cl', content: '', isDropped: false, isCheck: false, isCorrect: null, draggedBoxId: null, top: 53, left: 25, height: '8%', width: '50%', correctAnswer: 'box2-cl', isHovered: false },
-            { id: 'dropZone7-cl', content: '', isDropped: false, isCheck: false, isCorrect: null, draggedBoxId: null, top: 69, left: 25, height: '7%', width: '50%', correctAnswer: 'box1-cl', isHovered: false },
-            { id: 'dropZone8-cl', content: '', isDropped: false, isCheck: false, isCorrect: null, draggedBoxId: null, top: 90, left: 36, height: '8%', width: '39%', correctAnswer: 'box4-cl', isHovered: false },
-            { id: 'dropZone9-cl', content: '', isDropped: false, isCheck: false, isCorrect: null, draggedBoxId: null, top: 37, left: 25, height: '8%', width: '50%', correctAnswer: 'box5-cl', isHovered: false },
-            { id: 'dropZone10-cl', content: '', isDropped: false, isCheck: false, isCorrect: null, draggedBoxId: null, top: 6, left: 36, height: '8%', width: '39%', correctAnswer: 'box3-cl', isHovered: false },
-            { id: 'dropZone11-cl', content: '', isDropped: false, isCheck: false, isCorrect: null, draggedBoxId: null, top: 6, left: 20, height: '8%', width: '15%', correctAnswer: 'box7-cl', isHovered: false },
-            { id: 'dropZone12-cl', content: '', isDropped: false, isCheck: false, isCorrect: null, draggedBoxId: null, top: 29, left: 43, height: '7%', width: '15%', correctAnswer: 'box9-cl', isHovered: false },
-            { id: 'dropZone13-cl', content: '', isDropped: false, isCheck: false, isCorrect: null, draggedBoxId: null, top: 46, left: 43, height: '6%', width: '15%', correctAnswer: 'box6-cl', isHovered: false },
-            { id: 'dropZone14-cl', content: '', isDropped: false, isCheck: false, isCorrect: null, draggedBoxId: null, top: 62, left: 43, height: '6%', width: '15%', correctAnswer: 'box10-cl', isHovered: false },
-            { id: 'dropZone15-cl', content: '', isDropped: false, isCheck: false, isCorrect: null, draggedBoxId: null, top: 90, left: 20, height: '8%', width: '15%', correctAnswer: 'box11-cl', isHovered: false },
+            { id: 'dropZone6-cl', content: '', isDropped: false, isCheck: false, isCorrect: null, isIncorrect: null, draggedBoxId: null, top: 53, left: 25, height: '8%', width: '50%', correctAnswer: 'box2-cl', isHovered: false },
+            { id: 'dropZone7-cl', content: '', isDropped: false, isCheck: false, isCorrect: null, isIncorrect: null, draggedBoxId: null, top: 69, left: 25, height: '7%', width: '50%', correctAnswer: 'box1-cl', isHovered: false },
+            { id: 'dropZone8-cl', content: '', isDropped: false, isCheck: false, isCorrect: null, isIncorrect: null, draggedBoxId: null, top: 90, left: 36, height: '8%', width: '39%', correctAnswer: 'box4-cl', isHovered: false },
+            { id: 'dropZone9-cl', content: '', isDropped: false, isCheck: false, isCorrect: null, isIncorrect: null, draggedBoxId: null, top: 37, left: 25, height: '8%', width: '50%', correctAnswer: 'box5-cl', isHovered: false },
+            { id: 'dropZone10-cl', content: '', isDropped: false, isCheck: false, isCorrect: null, isIncorrect: null, draggedBoxId: null, top: 6, left: 36, height: '8%', width: '39%', correctAnswer: 'box3-cl', isHovered: false },
+            { id: 'dropZone11-cl', content: '', isDropped: false, isCheck: false, isCorrect: null, isIncorrect: null, draggedBoxId: null, top: 6, left: 20, height: '8%', width: '15%', correctAnswer: 'box7-cl', isHovered: false },
+            { id: 'dropZone12-cl', content: '', isDropped: false, isCheck: false, isCorrect: null, isIncorrect: null, draggedBoxId: null, top: 29, left: 43, height: '7%', width: '15%', correctAnswer: 'box9-cl', isHovered: false },
+            { id: 'dropZone13-cl', content: '', isDropped: false, isCheck: false, isCorrect: null, isIncorrect: null, draggedBoxId: null, top: 46, left: 43, height: '6%', width: '15%', correctAnswer: 'box6-cl', isHovered: false },
+            { id: 'dropZone14-cl', content: '', isDropped: false, isCheck: false, isCorrect: null, isIncorrect: null, draggedBoxId: null, top: 62, left: 43, height: '6%', width: '15%', correctAnswer: 'box10-cl', isHovered: false },
+            { id: 'dropZone15-cl', content: '', isDropped: false, isCheck: false, isCorrect: null, isIncorrect: null, draggedBoxId: null, top: 90, left: 20, height: '8%', width: '15%', correctAnswer: 'box11-cl', isHovered: false },
 
         ]
     };
@@ -56,6 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const btnVerificar = document.getElementById('btn-verificar-cl');
     const btnReintentar = document.getElementById('btn-reintentar');
     const btnmuyBien = document.getElementById('btn-muyBienCL');
+    const btnnonoCuidado = document.getElementById('btn-nonoCuidadoCL')
     //const btnTerminar = document.getElementById('btn-terminar');
     const opcionesContainerDeskopt = document.getElementById('opciones-container-deskopt-cl');
     const opcionesContainerMovil = document.getElementById('opciones-container-movil-cl');
@@ -104,6 +105,16 @@ document.addEventListener('DOMContentLoaded', () => {
         boxElement.classList.toggle('selected');
         }
     });
+    boxElement.addEventListener('keypress', () => {
+        if (!box.isDropped) {
+        if (state.selectedBox && state.selectedBox !== box.id) {
+            const prev = document.getElementById(state.selectedBox);
+            if (prev) prev.classList.remove('selected');
+        }
+        state.selectedBox = box.id;
+        boxElement.classList.toggle('selected');
+        }
+    });
     };
 
     // --- Render Functions ---
@@ -113,6 +124,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         state.boxes.forEach(box => {
             const boxElement = document.createElement('div');
+            boxElement.tabIndex = "0"
             boxElement.id = box.id;
             boxElement.classList.add('box');
             if (box.isDropped) {
@@ -138,6 +150,7 @@ document.addEventListener('DOMContentLoaded', () => {
         overlaySpacesContainer.innerHTML = '';
         state.dropZones.forEach(dropZone => {
             const dropZoneElement = document.createElement('div');
+            dropZoneElement.tabIndex = "0";
             dropZoneElement.id = dropZone.id;
             dropZoneElement.classList.add('drop-zone');
             dropZoneElement.style.top = `${dropZone.top}%`;
@@ -151,7 +164,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (dropZone.isCheck) {
                     if (dropZone.isCorrect) {
                         dropZoneElement.classList.add('correct');
-                    } else {
+                    } else if (dropZone.isIncorrect) {
                         dropZoneElement.classList.add('incorrect');
                     }
                 }
@@ -200,6 +213,17 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             });
             dropZoneElement.addEventListener('click', () => {
+                // Handle click for mobile or to clear content
+                if (dropZone.isDropped) {
+                    clearDropZoneContent(dropZone.id);
+                    renderGame();
+                } else if (state.selectedBox) { // For mobile: if a box is selected, try to drop it
+                    setDropZoneContent(dropZone.id, state.selectedBox);
+                    renderGame();
+                }
+            });
+
+            dropZoneElement.addEventListener('keypress', () => {
                 // Handle click for mobile or to clear content
                 if (dropZone.isDropped) {
                     clearDropZoneContent(dropZone.id);
@@ -292,6 +316,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         state.dropZones.forEach(dropZone => {
             const box = findBoxById(dropZone.draggedBoxId);
+            dropZone.isIncorrect = (box && box.id !== dropZone.correctAnswer);
             dropZone.isCorrect = (box && box.id === dropZone.correctAnswer);
             dropZone.isCheck = true; // Mark for visual feedback
 
@@ -300,6 +325,7 @@ document.addEventListener('DOMContentLoaded', () => {
             } else {
                 state.incorrectCount++;
             }
+            console.log(dropZone.isCorrect)
         });
 
         state.showResults = true;
@@ -312,6 +338,9 @@ document.addEventListener('DOMContentLoaded', () => {
         if (state.correctCount === 10) {
             //abrirModalConVideo("https://www.youtube.com/embed/GEIR6rdUNUM");
             btnmuyBien.style.display = "block"
+            btnnonoCuidado.style.display = "none"
+        } else {
+            btnnonoCuidado.style.display = "block"
         }
         document.querySelectorAll(".aciertosErroresCL").forEach(el => el.style.display = "block");
         renderGame(); // Re-render to show results

@@ -70,3 +70,39 @@
     font-size: 10pt;
     display: none;
 }
+
+.globotxtj5 {
+    width: 450px;
+    position: absolute;
+
+}
+
+.contenedorj5 {
+  position: relative;
+  width: 650px; 
+  margin-left: 150px;
+}
+
+.contenedorj5 img {
+  width: 80%;
+  height: 60%;
+  display: block;
+  position: center;
+}
+
+.textoj5 {
+  position: absolute;
+  top: 56%;
+  left: 49%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  font-size: 1.5vw;
+}
+
+.inputj5 {
+  display: flex;
+  flex-direction: column !important;
+  margin-top: 3px;
+  width: 80px;
+  text-align: center;
+}
