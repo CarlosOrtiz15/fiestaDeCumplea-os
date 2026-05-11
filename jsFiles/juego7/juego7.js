@@ -29,16 +29,16 @@ document.addEventListener('DOMContentLoaded', () => {
         ],
         dropZones: [
             // top y left son porcentajes de la imagen de fondo
-            { id: 'dropZone6-cl', content: '', isDropped: false, isCheck: false, isCorrect: null, isIncorrect: null, draggedBoxId: null, top: 53, left: 25, height: '8%', width: '50%', correctAnswer: 'box2-cl', isHovered: false },
-            { id: 'dropZone7-cl', content: '', isDropped: false, isCheck: false, isCorrect: null, isIncorrect: null, draggedBoxId: null, top: 69, left: 25, height: '7%', width: '50%', correctAnswer: 'box1-cl', isHovered: false },
-            { id: 'dropZone8-cl', content: '', isDropped: false, isCheck: false, isCorrect: null, isIncorrect: null, draggedBoxId: null, top: 90, left: 36, height: '8%', width: '39%', correctAnswer: 'box4-cl', isHovered: false },
-            { id: 'dropZone9-cl', content: '', isDropped: false, isCheck: false, isCorrect: null, isIncorrect: null, draggedBoxId: null, top: 37, left: 25, height: '8%', width: '50%', correctAnswer: 'box5-cl', isHovered: false },
-            { id: 'dropZone10-cl', content: '', isDropped: false, isCheck: false, isCorrect: null, isIncorrect: null, draggedBoxId: null, top: 6, left: 36, height: '8%', width: '39%', correctAnswer: 'box3-cl', isHovered: false },
-            { id: 'dropZone11-cl', content: '', isDropped: false, isCheck: false, isCorrect: null, isIncorrect: null, draggedBoxId: null, top: 6, left: 20, height: '8%', width: '15%', correctAnswer: 'box7-cl', isHovered: false },
-            { id: 'dropZone12-cl', content: '', isDropped: false, isCheck: false, isCorrect: null, isIncorrect: null, draggedBoxId: null, top: 29, left: 43, height: '7%', width: '15%', correctAnswer: 'box9-cl', isHovered: false },
-            { id: 'dropZone13-cl', content: '', isDropped: false, isCheck: false, isCorrect: null, isIncorrect: null, draggedBoxId: null, top: 46, left: 43, height: '6%', width: '15%', correctAnswer: 'box6-cl', isHovered: false },
-            { id: 'dropZone14-cl', content: '', isDropped: false, isCheck: false, isCorrect: null, isIncorrect: null, draggedBoxId: null, top: 62, left: 43, height: '6%', width: '15%', correctAnswer: 'box10-cl', isHovered: false },
-            { id: 'dropZone15-cl', content: '', isDropped: false, isCheck: false, isCorrect: null, isIncorrect: null, draggedBoxId: null, top: 90, left: 20, height: '8%', width: '15%', correctAnswer: 'box11-cl', isHovered: false },
+            { id: 'dropZone6-cl', content: '', isDropped: false, isCheck: false, isCorrect: null, isIncorrect: null, draggedBoxId: null, correctAnswer: 'box2-cl', isHovered: false },
+            { id: 'dropZone7-cl', content: '', isDropped: false, isCheck: false, isCorrect: null, isIncorrect: null, draggedBoxId: null, correctAnswer: 'box1-cl', isHovered: false },
+            { id: 'dropZone8-cl', content: '', isDropped: false, isCheck: false, isCorrect: null, isIncorrect: null, draggedBoxId: null, correctAnswer: 'box4-cl', isHovered: false },
+            { id: 'dropZone9-cl', content: '', isDropped: false, isCheck: false, isCorrect: null, isIncorrect: null, draggedBoxId: null, correctAnswer: 'box5-cl', isHovered: false },
+            { id: 'dropZone10-cl', content: '', isDropped: false, isCheck: false, isCorrect: null, isIncorrect: null, draggedBoxId: null, correctAnswer: 'box3-cl', isHovered: false },
+            { id: 'dropZone11-cl', content: '', isDropped: false, isCheck: false, isCorrect: null, isIncorrect: null, draggedBoxId: null, correctAnswer: 'box7-cl', isHovered: false },
+            { id: 'dropZone12-cl', content: '', isDropped: false, isCheck: false, isCorrect: null, isIncorrect: null, draggedBoxId: null, correctAnswer: 'box9-cl', isHovered: false },
+            { id: 'dropZone13-cl', content: '', isDropped: false, isCheck: false, isCorrect: null, isIncorrect: null, draggedBoxId: null, correctAnswer: 'box6-cl', isHovered: false },
+            { id: 'dropZone14-cl', content: '', isDropped: false, isCheck: false, isCorrect: null, isIncorrect: null, draggedBoxId: null, correctAnswer: 'box10-cl', isHovered: false },
+            { id: 'dropZone15-cl', content: '', isDropped: false, isCheck: false, isCorrect: null, isIncorrect: null, draggedBoxId: null,  correctAnswer: 'box11-cl', isHovered: false },
 
         ]
     };
@@ -153,10 +153,6 @@ document.addEventListener('DOMContentLoaded', () => {
             dropZoneElement.tabIndex = "0";
             dropZoneElement.id = dropZone.id;
             dropZoneElement.classList.add('drop-zone');
-            dropZoneElement.style.top = `${dropZone.top}%`;
-            dropZoneElement.style.left = `${dropZone.left}%`;
-            dropZoneElement.style.height = dropZone.height;
-            dropZoneElement.style.width = dropZone.width;
 
             // Apply classes based on state
             if (dropZone.isDropped) {

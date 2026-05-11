@@ -4,66 +4,91 @@
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr;
 }
+
 .pregunta {
     display: flex;
     justify-content: center;
 }
+
 .invitacion1 {
     width: 75%;
     margin-left: 120px;
 }
+
 .invitacion2 {
     width: 75%;
 }
+
 .invitacion3 {
     width: 75%;
     margin-right: 150px;
 }
+
 .invitacion1Txt {
     font-size: 22px;
 }
+
 .invitacion2Txt {
     font-size: 22px;
 }
+
 .invitacion3Txt {
     font-size: 22px;
 }
+
 .input-linea1 {
-  border: none;              /* quita todos los bordes */
-  border-bottom: 2px solid #000; /* deja solo la línea */
-  outline: none;             /* quita el borde azul al hacer focus */
-  width: 300px;              /* ajusta al tamaño que quieras */
-  font-size: 16px;
-  background-color: none;
+    border: none;
+    /* quita todos los bordes */
+    border-bottom: 2px solid #000;
+    /* deja solo la línea */
+    outline: none;
+    /* quita el borde azul al hacer focus */
+    width: 300px;
+    /* ajusta al tamaño que quieras */
+    font-size: 16px;
+    background-color: none;
 }
+
 .input-linea2 {
-  border: none;              /* quita todos los bordes */
-  border-bottom: 2px solid #000; /* deja solo la línea */
-  outline: none;             /* quita el borde azul al hacer focus */
-  width: 300px;              /* ajusta al tamaño que quieras */
-  font-size: 16px;
-  background-color: none;
+    border: none;
+    /* quita todos los bordes */
+    border-bottom: 2px solid #000;
+    /* deja solo la línea */
+    outline: none;
+    /* quita el borde azul al hacer focus */
+    width: 300px;
+    /* ajusta al tamaño que quieras */
+    font-size: 16px;
+    background-color: none;
 }
+
 .input-linea3 {
-  border: none;              /* quita todos los bordes */
-  border-bottom: 2px solid #000; /* deja solo la línea */
-  outline: none;             /* quita el borde azul al hacer focus */   
-  width: 300px;              /* ajusta al tamaño que quieras */
-  font-size: 16px;
-  background-color: none;
+    border: none;
+    /* quita todos los bordes */
+    border-bottom: 2px solid #000;
+    /* deja solo la línea */
+    outline: none;
+    /* quita el borde azul al hacer focus */
+    width: 300px;
+    /* ajusta al tamaño que quieras */
+    font-size: 16px;
+    background-color: none;
 }
+
 .aciertosErroresEH {
     font-family: "Nunito", sans-serif;
     font-weight: 900;
     font-size: 10pt;
     display: none;
 }
+
 .aciertosErroresEH_2 {
     font-family: "Nunito", sans-serif;
     font-weight: 900;
     font-size: 10pt;
     display: none;
 }
+
 .aciertosErroresEH_3 {
     font-family: "Nunito", sans-serif;
     font-weight: 900;
@@ -78,31 +103,47 @@
 }
 
 .contenedorj5 {
-  position: relative;
-  width: 650px; 
-  margin-left: 150px;
+    position: relative;
+    width: 650px;
+    margin-left: 150px;
 }
 
 .contenedorj5 img {
-  width: 80%;
-  height: 60%;
-  display: block;
-  position: center;
+    width: 80%;
+    height: 60%;
+    display: block;
+    position: center;
 }
 
 .textoj5 {
-  position: absolute;
-  top: 56%;
-  left: 49%;
-  transform: translate(-50%, -50%);
-  width: 80%;
-  font-size: 1.5vw;
+    position: absolute;
+    top: 56%;
+    left: 49%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    font-size: 1.5vw;
 }
 
 .inputj5 {
-  display: flex;
-  flex-direction: column !important;
-  margin-top: 3px;
-  width: 80px;
-  text-align: center;
+    display: flex;
+    flex-direction: column !important;
+    margin-top: 3px;
+    width: 80px;
+    text-align: center;
+}
+
+@media (max-width: 644px) {
+    .invitacion1 {
+        width: 120px;
+        margin-left: 30px;
+    }
+
+    .invitacion2 {
+        width: 120px;
+    }
+
+    .invitacion3 {
+        width: 120px;
+        margin-right: 150px;
+    }
 }
