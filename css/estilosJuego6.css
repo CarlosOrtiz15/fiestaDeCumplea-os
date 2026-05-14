@@ -1,7 +1,7 @@
 .btnjuego6 {
-margin-top: 50px;
-font-family: Arial, Helvetica, sans-serif;
-font-size: 25px;
+    margin-top: 50px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 25px;
 }
 
 .globotxt {
@@ -9,8 +9,19 @@ font-size: 25px;
     bottom: 51%;
     right: 11%;
 }
+
 .globoimg {
     position: absolute;
     bottom: 39%;
     right: 49%;
+}
+
+.imagenGenio {
+    width: 150px;
+}
+
+@media (max-width: 644px) {
+    .imagenGenio {
+        width: 50px;
+    }
 }

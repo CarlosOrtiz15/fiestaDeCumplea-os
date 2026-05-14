@@ -4,3 +4,145 @@
     font-size: 10pt;
     display: none;
 }
+
+#dropZone6-cl {
+    top: 53%;
+    left: 25%;
+    height: 8%;
+    width: 50%;
+}
+
+#dropZone7-cl {
+    top: 69%;
+    left: 25%;
+    height: 7%;
+    width: 50%;
+}
+
+#dropZone8-cl {
+    top: 90%;
+    left: 36%;
+    height: 8%;
+    width: 39%;
+}
+
+#dropZone9-cl {
+    top: 37%;
+    left: 25%;
+    height: 8%;
+    width: 50%;
+}
+
+#dropZone10-cl {
+    top: 6%;
+    left: 36%;
+    height: 8%;
+    width: 39%;
+}
+
+#dropZone11-cl {
+    top: 6%;
+    left: 20%;
+    height: 8%;
+    width: 15%;
+}
+
+#dropZone12-cl {
+    top: 29%;
+    left: 43%;
+    height: 7%;
+    width: 15%;
+}
+
+#dropZone13-cl {
+    top: 46%;
+    left: 43%;
+    height: 6%;
+    width: 15%;
+}
+
+#dropZone14-cl {
+    top: 62%;
+    left: 43%;
+    height: 6%;
+    width: 15%;
+}
+
+#dropZone15-cl {
+    top: 90%;
+    left: 20%;
+    height: 8%;
+    width: 15%;
+}
+
+@media (max-width: 644px) {
+    #dropZone6-cl {
+        top: 53%;
+        left: 25%;
+        height: 8%;
+        width: 50%;
+    }
+
+    #dropZone7-cl {
+        top: 69%;
+        left: 25%;
+        height: 8%;
+        width: 50%;
+    }
+
+    #dropZone8-cl {
+        top: 90%;
+        left: 36%;
+        height: 8%;
+        width: 39%;
+    }
+
+    #dropZone9-cl {
+        top: 37%;
+        left: 25%;
+        height: 8%;
+        width: 50%;
+    }
+
+    #dropZone10-cl {
+        top: 6%;
+        left: 36%;
+        height: 8%;
+        width: 39%;
+    }
+
+    #dropZone11-cl {
+        top: 6%;
+        left: 20%;
+        height: 8%;
+        width: 15%;
+    }
+
+    #dropZone12-cl {
+        top: 29%;
+        left: 40%;
+        height: 6%;
+        width: 20%;
+    }
+
+    #dropZone13-cl {
+        top: 46%;
+        left: 40%;
+        height: 6%;
+        width: 20%;
+    }
+
+    #dropZone14-cl {
+        top: 62%;
+        left: 40%;
+        height: 6%;
+        width: 20%;
+    }
+
+    #dropZone15-cl {
+        top: 90%;
+        left: 20%;
+        height: 8%;
+        width: 15%;
+    }
+}

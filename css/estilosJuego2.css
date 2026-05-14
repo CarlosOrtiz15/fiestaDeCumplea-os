@@ -3,16 +3,19 @@
 .prueba {
     border: 1px solid black;
 }
+
 .nuevo-container {
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
 .txt_titulo {
     font-family: "Nunito", sans-serif;
     font-weight: 900;
     color: black;
 }
+
 .regresar a {
     border: 2px solid black;
     padding: 8px;
@@ -22,17 +25,20 @@
     font-weight: bold;
     text-decoration: none;
 }
+
 .t_center {
     width: 90%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
 .video-container {
     align-items: center;
     width: 100%;
     justify-content: center;
 }
+
 .texto-rojo {
     color: black;
 }
@@ -43,11 +49,13 @@
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr;
 }
-.tabla{
+
+.tabla {
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
 .image-container {
     height: auto;
     justify-content: center;
@@ -56,11 +64,21 @@
     border-bottom-right-radius: 17px;
     display: block;
 }
+
 .image-wrapper {
-    position: relative; /* FUNDAMENTAL para posicionar los drop-zones */
-    display: flex; /* Permite centrar la imagen base */
-    justify-content: center; /* Centra la imagen base */
-    align-items: center; /* Centra la imagen base */
+    position: relative;
+    /* FUNDAMENTAL para posicionar los drop-zones */
+    display: flex;
+    /* Permite centrar la imagen base */
+    justify-content: center;
+    /* Centra la imagen base */
+    align-items: center;
+    /* Centra la imagen base */
+}
+
+.tamañoIMG {
+    width: 527.34px;
+    height: 742.26px;
 }
 
 /* Imagen de la invitación base */
@@ -92,10 +110,12 @@
     text-shadow: -2px -2px 0 black, 2px -2px 0 black, -2px 2px 0 black,
         2px 2px 0 black;
 }
+
 .t1e {
     color: #fefa9c;
     font-size: 46px;
 }
+
 .inv_t2 {
     text-align: center;
     font-weight: bold;
@@ -110,6 +130,7 @@
     text-shadow: -2px -2px 0 black, 2px -2px 0 black, -2px 2px 0 black,
         2px 2px 0 black;
 }
+
 .inv_t3 {
     text-align: center;
     font-weight: bold;
@@ -124,6 +145,7 @@
     text-shadow: -2px -2px 0 black, 2px -2px 0 black, -2px 2px 0 black,
         2px 2px 0 black;
 }
+
 .inv_t4 {
     text-align: center;
     font-weight: bold;
@@ -138,6 +160,7 @@
     text-shadow: -2px -2px 0 black, 2px -2px 0 black, -2px 2px 0 black,
         2px 2px 0 black;
 }
+
 .inv_t5 {
     text-align: center;
     font-weight: bold;
@@ -152,6 +175,7 @@
     text-shadow: -2px -2px 0 black, 2px -2px 0 black, -2px 2px 0 black,
         2px 2px 0 black;
 }
+
 .inv_t6 {
     text-align: center;
     font-weight: bold;
@@ -167,6 +191,7 @@
     text-shadow: -2px -2px 0 black, 2px -2px 0 black, -2px 2px 0 black,
         2px 2px 0 black;
 }
+
 .t6e {
     color: #fefa9c;
     font-size: 30px;
@@ -186,6 +211,7 @@
     text-shadow: -2px -2px 0 black, 2px -2px 0 black, -2px 2px 0 black,
         2px 2px 0 black;
 }
+
 .inv_t8 {
     text-align: center;
     font-weight: bold;
@@ -207,35 +233,42 @@
     font-size: 15pt;
     color: #2cb7b3;
 }
+
 .aciertosErroresCI {
     font-family: "Nunito", sans-serif;
     font-weight: 900;
     font-size: 10pt;
     display: none;
 }
+
 .opciones-container-deskopt {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
     justify-content: center;
 }
+
 .opciones-container-movil {
-    display: none; /* Por defecto oculto en desktop */
+    display: none;
+    /* Por defecto oculto en desktop */
     flex-wrap: wrap;
     gap: 10px;
     justify-content: center;
 }
 
 .box {
-    position: relative; /* Necesario para la imagen interna si se posiciona */
-    display: flex; /* Para alinear contenido y imagen */
+    position: relative;
+    /* Necesario para la imagen interna si se posiciona */
+    display: flex;
+    /* Para alinear contenido y imagen */
     align-items: center;
     padding: 7px;
     gap: 10px;
     font-family: "Nunito", sans-serif;
     font-weight: 700;
     font-size: 15pt;
-    cursor: grab; /* Cambiado de 'pointer' a 'grab' para indicar arrastrable */
+    cursor: grab;
+    /* Cambiado de 'pointer' a 'grab' para indicar arrastrable */
     color: white;
     background-color: #2cb7b3;
     border: 2px solid black;
@@ -243,23 +276,29 @@
     max-width: 100%;
     max-height: 100%;
     user-select: none;
-    transition: opacity 0.3s ease; /* Transición para cuando se oculta */
+    transition: opacity 0.3s ease;
+    /* Transición para cuando se oculta */
 }
+
 .box:focus {
     outline: none;
     border: 4px solid blue;
 }
+
 .box.initial {
     background-color: #2cb7b3;
 }
+
 .box.selected {
     background-color: #249490;
     border-color: black;
 }
+
 .box.dropped {
     /* Los elementos "dropped" ahora se ocultarán, no cambiarán de estilo */
     display: none;
 }
+
 /* Las clases 'incorrect' y 'correct' en el box arrastrable ya no son relevantes directamente */
 
 
@@ -272,7 +311,7 @@
     height: 100%;
     pointer-events: auto;
     background: transparent !important;
-     z-index: 1;
+    z-index: 1;
     /* Permitir clicks a través si no hay un elemento arrastrado por encima.
        Se debe manejar con JS en el onDrop para evitar que un click en un drop-space vacío dispare el clear si hay un elemento arrastrado sobre él.
        Para este juego, es mejor que cada drop-space maneje su propio pointer-events.
@@ -282,7 +321,8 @@
 .drop-zone {
     border-radius: 60px;
     cursor: default;
-    position: absolute; /* Esencial para posicionar sobre la imagen */
+    position: absolute;
+    /* Esencial para posicionar sobre la imagen */
     display: flex;
     align-items: center;
     font-weight: bold;
@@ -295,7 +335,8 @@
     border: 2px dotted black;
     max-width: 100%;
     max-height: 100%;
-    background-color: rgba(255, 255, 255, 0.4); /* Semitransparente para ver la invitación de fondo */
+    background-color: rgba(255, 255, 255, 0.4);
+    /* Semitransparente para ver la invitación de fondo */
     transition: background-color 0.3s, border-color 0.3s;
 }
 
@@ -305,22 +346,28 @@
 }
 
 .drop-zone.initial {
-    background-color: rgba(255, 255, 255, 0.4); /* Mismo que el predeterminado */
+    background-color: rgba(255, 255, 255, 0.4);
+    /* Mismo que el predeterminado */
     color: black;
 }
+
 .drop-zone.has-content {
     background-color: #2cb7b3;
     color: white;
     border: 3px solid black;
-    cursor: pointer; /* Para poder hacer clic y quitar la imagen */
+    cursor: pointer;
+    /* Para poder hacer clic y quitar la imagen */
 }
+
 .drop-zone.correct {
-    border: 3px solid green; /* Borde verde para correcto */
+    border: 3px solid green;
+    /* Borde verde para correcto */
     background-color: rgb(70, 230, 137);
 }
+
 .drop-zone.incorrect {
     border: 3px solid red;
-    background-color: rgb(238, 105, 90); 
+    background-color: rgb(238, 105, 90);
 }
 
 .drop-zone.hover {
@@ -340,6 +387,7 @@
     color: black;
     cursor: pointer;
 }
+
 .btn-reintentar {
     text-align: center;
     border: 1px solid red;
@@ -352,6 +400,7 @@
     color: black;
     cursor: pointer;
 }
+
 .btn-terminar {
     text-align: center;
     border: 1px solid green;
@@ -364,40 +413,191 @@
     color: black;
     cursor: pointer;
 }
+
 .imgBox {
     border-radius: 15px;
     width: 40px;
     height: 40px;
-    pointer-events: none;    
+    pointer-events: none;
 }
+
 .drop-content {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-weight: 700;
-  font-family: "Nunito", sans-serif;
-  font-size: 10pt;
-  color: white;
-  padding: 5px 10px;
-  border-radius: 30%;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 700;
+    font-family: "Nunito", sans-serif;
+    font-size: 10pt;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 30%;
 }
 
 .drop-zone img.imgDropZone {
-    max-width: 90%; /* Ajusta al 90% del ancho del drop-zone */
-    max-height: 90%; /* Ajusta al 90% de la altura del drop-zone */
-    object-fit: contain; /* Asegura que la imagen se ajuste sin distorsión */
-    display: block; /* Para que max-width/height funcionen correctamente */
+    max-width: 90%;
+    /* Ajusta al 90% del ancho del drop-zone */
+    max-height: 90%;
+    /* Ajusta al 90% de la altura del drop-zone */
+    object-fit: contain;
+    /* Asegura que la imagen se ajuste sin distorsión */
+    display: block;
+    /* Para que max-width/height funcionen correctamente */
     border-radius: 15px;
 }
 
-@media (max-width: 576px) {
+.tamañoInv {
+    width: "527.34px";
+    height: "742.26px";
+}
+
+@media (max-width: 644px) {
+
+    #overlay-spaces-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: auto;
+        background: transparent !important;
+        z-index: 1;
+    }
+
+    .image-wrapper img {
+        width: 377px;
+        height: 592px;
+    }
+
+    .inv_t1 {
+        text-align: center;
+        font-family: "Nunito", sans-serif;
+        font-weight: 900;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 38px;
+        color: white;
+        line-height: 36px;
+        text-shadow: -2px -2px 0 black, 2px -2px 0 black, -2px 2px 0 black,
+            2px 2px 0 black;
+    }
+
+    .inv_t2 {
+        text-align: center;
+        font-weight: bold;
+        font-family: "Nunito", sans-serif;
+        font-weight: 900;
+        font-size: 25px;
+        color: white;
+        position: absolute;
+        top: 29%;
+        left: 50%;
+        transform: translateX(-50%);
+        text-shadow: -2px -2px 0 black, 2px -2px 0 black, -2px 2px 0 black,
+            2px 2px 0 black;
+    }
+
+    .inv_t3 {
+        text-align: center;
+        font-weight: bold;
+        font-family: "Nunito", sans-serif;
+        font-weight: 900;
+        font-size: 25px;
+        color: white;
+        position: absolute;
+        top: 44%;
+        left: 50%;
+        transform: translateX(-50%);
+        text-shadow: -2px -2px 0 black, 2px -2px 0 black, -2px 2px 0 black,
+            2px 2px 0 black;
+    }
+
+    .inv_t4 {
+        text-align: center;
+        font-weight: bold;
+        font-family: "Nunito", sans-serif;
+        font-weight: 900;
+        font-size: 25px;
+        color: white;
+        position: absolute;
+        top: 60%;
+        left: 50%;
+        transform: translateX(-50%);
+        text-shadow: -2px -2px 0 black, 2px -2px 0 black, -2px 2px 0 black,
+            2px 2px 0 black;
+    }
+
+    .inv_t5 {
+        text-align: center;
+        font-weight: bold;
+        font-family: "Nunito", sans-serif;
+        font-weight: 900;
+        font-size: 25px;
+        color: white;
+        position: absolute;
+        top: 89%;
+        left: 33%;
+        transform: translateX(-65%);
+        text-shadow: -2px -2px 0 black, 2px -2px 0 black, -2px 2px 0 black,
+            2px 2px 0 black;
+    }
+
+    .inv_t6 {
+        text-align: center;
+        font-weight: bold;
+        font-family: "Nunito", sans-serif;
+        font-weight: 900;
+        font-size: 25px;
+        line-height: 31px;
+        color: #fefa9c;
+        position: absolute;
+        top: 76%;
+        left: 50%;
+        transform: translateX(-50%);
+        text-shadow: -2px -2px 0 black, 2px -2px 0 black, -2px 2px 0 black,
+            2px 2px 0 black;
+    }
+
+    .inv_t7 {
+        text-align: center;
+        font-weight: bold;
+        font-family: "Nunito", sans-serif;
+        font-weight: 900;
+        font-size: 25px;
+        color: white;
+        position: absolute;
+        top: 0%;
+        left: 32%;
+        transform: translateX(-65%);
+        text-shadow: -2px -2px 0 black, 2px -2px 0 black, -2px 2px 0 black,
+            2px 2px 0 black;
+    }
+
+    .inv_t8 {
+        text-align: center;
+        font-weight: bold;
+        font-family: "Nunito", sans-serif;
+        font-weight: 900;
+        font-size: 25px;
+        color: white;
+        position: absolute;
+        top: 44%;
+        left: 50%;
+        transform: translateX(-50%);
+        text-shadow: -2px -2px 0 black, 2px -2px 0 black, -2px 2px 0 black,
+            2px 2px 0 black;
+    }
+
     .opciones-container-deskopt {
         display: none;
     }
+
     .opciones-container-movil {
-        display: flex; /* Muestra en móvil */
+        display: flex;
+        /* Muestra en móvil */
         border-top: 1px solid #2cb7b3;
     }
+
     .imgBox {
         width: 30px;
         height: 30px;
@@ -409,51 +609,61 @@
         height: 27px;
         border-radius: 15px;
     }
+
     .inv_t1 {
-        top: 100%;
+        top:15%;
         width: 90%;
         font-size: 22px;
         line-height: 21px;
     }
+
     .t1e {
         color: #fefa9c;
         font-size: 30px;
     }
+
     .drop-zone {
-        width: 55% !important; /* Mantenemos !important del original */
+        /* Mantenemos !important del original */
         font-size: 10pt;
     }
+
     .inv_t2 {
         font-size: 21px;
         top: 27%;
     }
+
     .inv_t3 {
         font-size: 21px;
-        top: 45%;
+        top: 43%;
     }
+
     .inv_t4 {
         font-size: 21px;
         width: 90%;
-        top: 61%;
+        top: 58%;
     }
+
     .inv_t5 {
         font-size: 21px;
-        top: 90%;
+        top: 87%;
         left: 30%;
     }
+
     .t6e {
         color: #fefa9c;
         font-size: 22px;
     }
+
     .inv_t6 {
         font-size: 21px;
-        top: 78%;
+        top: 85%;
         line-height: 21px;
     }
+
     .inv_t7 {
         font-size: 19px;
-        top: 6.5%;
-        left: 29%;
+        top: 3.5%;
+        left: 28%;
     }
 
     .timer-container {
@@ -462,18 +672,17 @@
         font-size: 12pt;
         color: #2cb7b3;
     }
+
     .box {
         width: auto;
         height: auto;
     }
+
     .box-container {
         border: 0px;
     }
+
     .image-container {
         border-radius: 17px;
-    }
-    .image-wrapper img {
-        width: auto;
-        height: auto;
     }
 }

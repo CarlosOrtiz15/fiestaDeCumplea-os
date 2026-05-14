@@ -16,7 +16,7 @@ El inputEI son los inputs de Escribe tu Invitación*/
         2px 2px 0 black;
 }
 
-.inputEI1 input{
+.inputEI1 input {
     border: 2px solid black;
     border-radius: 30px;
     padding: 8px 12px;
@@ -43,7 +43,7 @@ El inputEI son los inputs de Escribe tu Invitación*/
 }
 
 
-.inputEI2 input{
+.inputEI2 input {
     border: 2px solid black;
     border-radius: 30px;
     padding: 8px 12px;
@@ -53,6 +53,7 @@ El inputEI son los inputs de Escribe tu Invitación*/
     top: 38%;
     left: 30%;
 }
+
 .inv_EI3 {
     text-align: center;
     font-weight: bold;
@@ -67,7 +68,8 @@ El inputEI son los inputs de Escribe tu Invitación*/
     text-shadow: -2px -2px 0 black, 2px -2px 0 black, -2px 2px 0 black,
         2px 2px 0 black;
 }
-.inputEI3 input{
+
+.inputEI3 input {
     border: 2px solid black;
     border-radius: 30px;
     padding: 8px 12px;
@@ -77,6 +79,7 @@ El inputEI son los inputs de Escribe tu Invitación*/
     top: 39%;
     left: 15%;
 }
+
 .inv_EI9 {
     text-align: center;
     font-weight: bold;
@@ -92,7 +95,7 @@ El inputEI son los inputs de Escribe tu Invitación*/
         2px 2px 0 black;
 }
 
-.inputEI4 input{
+.inputEI4 input {
     border: 2px solid black;
     border-radius: 30px;
     padding: 8px 12px;
@@ -102,7 +105,8 @@ El inputEI son los inputs de Escribe tu Invitación*/
     top: 55%;
     left: 15%;
 }
-.inputEI5 input{
+
+.inputEI5 input {
     border: 2px solid black;
     border-radius: 30px;
     padding: 8px 12px;
@@ -113,7 +117,7 @@ El inputEI son los inputs de Escribe tu Invitación*/
     left: 15%;
 }
 
-.inputEI6 input{
+.inputEI6 input {
     border: 2px solid black;
     border-radius: 30px;
     padding: 8px 12px;
@@ -138,6 +142,7 @@ El inputEI son los inputs de Escribe tu Invitación*/
     text-shadow: -2px -2px 0 black, 2px -2px 0 black, -2px 2px 0 black,
         2px 2px 0 black;
 }
+
 .inv_EI4 {
     text-align: center;
     font-weight: bold;
@@ -152,6 +157,7 @@ El inputEI son los inputs de Escribe tu Invitación*/
     text-shadow: -2px -2px 0 black, 2px -2px 0 black, -2px 2px 0 black,
         2px 2px 0 black;
 }
+
 .inv_EI5 {
     text-align: center;
     font-weight: bold;
@@ -166,6 +172,7 @@ El inputEI son los inputs de Escribe tu Invitación*/
     text-shadow: -2px -2px 0 black, 2px -2px 0 black, -2px 2px 0 black,
         2px 2px 0 black;
 }
+
 .inv_t6 {
     text-align: center;
     font-weight: bold;
@@ -195,4 +202,72 @@ El inputEI son los inputs de Escribe tu Invitación*/
     transform: translateX(-50%);
     text-shadow: -2px -2px 0 black, 2px -2px 0 black, -2px 2px 0 black,
         2px 2px 0 black;
+}
+
+@media (max-width: 644px) {
+    .inputEI1 input {
+        border: 2px solid black;
+        border-radius: 30px;
+        padding: 8px 12px;
+        width: 220px;
+        font-size: 16px;
+        position: absolute;
+        top: 7%;
+        left: 29%;
+    }
+
+    .inputEI2 input {
+        border: 2px solid black;
+        border-radius: 30px;
+        padding: 8px 12px;
+        width: 220px;
+        font-size: 16px;
+        position: absolute;
+        top: 38%;
+        left: 30%;
+    }
+
+    .inputEI3 input {
+        border: 2px solid black;
+        border-radius: 30px;
+        padding: 8px 12px;
+        width: 260px;
+        font-size: 16px;
+        position: absolute;
+        top: 39%;
+        left: 15%;
+    }
+
+    .inputEI4 input {
+        border: 2px solid black;
+        border-radius: 30px;
+        padding: 8px 12px;
+        width: 260px;
+        font-size: 16px;
+        position: absolute;
+        top: 55%;
+        left: 15%;
+    }
+
+    .inputEI5 input {
+        border: 2px solid black;
+        border-radius: 30px;
+        padding: 8px 12px;
+        width: 260px;
+        font-size: 16px;
+        position: absolute;
+        top: 70%;
+        left: 15%;
+    }
+
+    .inputEI6 input {
+        border: 2px solid black;
+        border-radius: 30px;
+        padding: 8px 12px;
+        width: 220px;
+        font-size: 16px;
+        position: absolute;
+        top: 91%;
+        left: 29%;
+    }
 }
